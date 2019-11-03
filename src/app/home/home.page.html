@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      techjockey.com
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="language-text">
+  Choose your Language
+</div>
+<ion-content style="--background: none;">
+  <ion-card class="choose-language">
+    <ion-item *ngFor="let item of language | keyvalue" no-margin no-padding>
+      <ion-label (click)="selectlanguage(item.key)" style="padding-left:10px">{{
+        item.value
+      }}</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

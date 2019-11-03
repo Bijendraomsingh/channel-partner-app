@@ -1,0 +1,239 @@
+.product_detail {
+  .microsoft_office {
+    background: #fff;
+    padding: 0px;
+    margin: 12px;
+    border-radius: 8px;
+  }
+  .microsoft_office p.solid_dd {
+    display: flex;
+    padding-left: 16px;
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 18px;
+    font-family: avenir-roman;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .microsoft_office .office_rights p.solid_dd {
+    display: flex;
+    padding-left: 16px;
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 18px;
+    font-family: avenir-roman;
+    margin-bottom: 0px;
+    padding-bottom: 12px;
+    color: #4a4a4a;
+  }
+
+  .microsoft_office .office_rights {
+    border-right: 3px dashed #ddd;
+  }
+
+  .microsoft_office span.inner_office {
+    padding-top: 16px;
+    display: flex;
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: avenir-roman;
+    line-height: 1.5;
+  }
+
+  .microsoft_office .office_rights p.solid_dd {
+    display: flex;
+    padding-left: 20px;
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 18px;
+    font-family: avenir-roman;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .live-dd .ruppes_right {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    color: rgba(21, 171, 127, 0.7);
+    font-family: avenir-roman;
+  }
+
+  .sc-ion-card-md-s img {
+    display: block;
+    width: 100%;
+  }
+  .csp-download-dd {
+    --box-shadow: none;
+    background: #fff;
+    border: none;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .top_categorey
+    .searchbar-input-container.sc-ion-searchbar-md
+    input.searchbar-input.sc-ion-searchbar-md {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 0 rgba(36, 39, 44, 0.05);
+    background-color: #fff;
+    font-family: "avenir-roman";
+    font-weight: 500;
+  }
+  .top_categorey .sort_by_css {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 0 rgba(36, 39, 44, 0.05);
+    background-color: #fff;
+    border-bottom: none;
+    border-bottom: 1px solid #fff !important;
+    height: 42px;
+    padding: 2px 12px 0px 0px;
+    margin-top: 12px;
+  }
+  .microsoft_office .office_rights p.solid_dd img {
+    padding-left: 8px;
+    padding-right: 4px;
+  }
+  .face-app-dd img {
+    margin-top: 9px;
+    width: auto;
+    float: left;
+  }
+
+  .live-dd {
+    box-shadow: none;
+    display: flex;
+    margin-right: 16px;
+    opacity: 0.7;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0px;
+  }
+  .face-app-dd p.business_aricle {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    font-size: 12px;
+    font-weight: 900;
+    font-family: "avenir-roman";
+    color: #999;
+    padding-left: 6px;
+  }
+  .live-dd p.calendar_po {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .live_dd_datepicker {
+    padding-left: 12px;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: "avenir-roman";
+    color: rgba(74, 74, 74, 0.7);
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .microsoft_office p.solid_dd span.rupess_rs {
+    padding-left: 12px;
+    padding-right: 4px;
+    font-weight: 600;
+  }
+  .top_categorey .searchbar_by {
+    padding-left: 0px;
+    /* padding-right: 0px; */
+  }
+}
+
+.home-description-list {
+  h2 {
+    padding: 0 20px 20px 20px;
+    color: #4a4a4a;
+    font-size: 20px;
+  }
+  .profile-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    margin: 0;
+    padding: 0;
+    img {
+      width: 65px;
+      height: 65px;
+      border-radius: 65px;
+    }
+  }
+  .select-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    box-shadow: none;
+    height: 55px;
+    .select-item {
+      display: flex;
+      flex-shrink: 0;
+      justify-content: flex-end;
+      box-sizing: 1px;
+      width: 30%;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      --background: #fff;
+      color: #472dc2;
+      height: 44px;
+      ion-text {
+        display: flex;
+        flex-grow: 1;
+        color: #4a4a4a;
+        text-transform: capitalize;
+        font-size: 12px;
+        ion-icon {
+          width: 20px;
+          height: 20px;
+          color: #472dc2;
+        }
+      }
+    }
+    .mid-button {
+      flex-grow: 3;
+      margin: 0 5px;
+    }
+    .arrowicon {
+      justify-content: flex-end;
+      position: absolute;
+      right: 8px;
+    }
+    .select-text {
+      flex-grow: 3;
+      width: 30%;
+    }
+  }
+  .select-svgimg {
+    flex-shrink: 0;
+    justify-content: flex-start;
+    max-width: 25px;
+    margin: 0 0 0 8px;
+  }
+  .profile-text {
+    font-size: 11px;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 20px 0 0 0;
+  }
+  ion-slide {
+    display: flex;
+    flex-direction: column;
+    max-width: 140px;
+  }
+  .home-video {
+    margin-top: 20px;
+    box-shadow: none;
+    img {
+      border-radius: 10px;
+    }
+  }
+}

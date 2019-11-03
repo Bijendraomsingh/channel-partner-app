@@ -1,0 +1,439 @@
+.home-description {
+  background-color: #ededed;
+  h2 {
+    padding: 0 20px 20px 20px;
+    color: #4a4a4a;
+    font-size: 20px;
+  }
+  .profile-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    margin: 0;
+    padding: 0;
+    img {
+      width: 65px;
+      height: 65px;
+      border-radius: 65px;
+    }
+  }
+  .select-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    box-shadow: none;
+    height: 55px;
+    .select-item {
+      display: flex;
+      flex-shrink: 0;
+      justify-content: flex-end;
+      box-sizing: 1px;
+      width: 30%;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      --background: #fff;
+      color: #472dc2;
+      height: 44px;
+      ion-text {
+        display: flex;
+        flex-grow: 1;
+        color: #4a4a4a;
+        text-transform: capitalize;
+        font-size: 12px;
+        ion-icon {
+          width: 20px;
+          height: 20px;
+          color: #472dc2;
+        }
+      }
+    }
+    .mid-button {
+      flex-grow: 3;
+      margin: 0 5px;
+    }
+    .arrowicon {
+      justify-content: flex-end;
+      position: absolute;
+      right: 8px;
+    }
+    .select-text {
+      flex-grow: 3;
+      width: 30%;
+    }
+  }
+  .select-svgimg {
+    flex-shrink: 0;
+    justify-content: flex-start;
+    max-width: 25px;
+    margin: 0 0 0 8px;
+  }
+  .profile-text {
+    font-size: 11px;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 20px 0 0 0;
+  }
+  ion-slide {
+    display: flex;
+    flex-direction: column;
+    max-width: 140px;
+  }
+  .home-video {
+    margin-top: 20px;
+    box-shadow: none;
+    img {
+      border-radius: 10px;
+    }
+  }
+
+  .callus-btn {
+    @extend .home-video;
+    position: relative;
+    border-radius: 10px;
+    .profile-description {
+      width: 90px;
+      height: 90px;
+      display: flex;
+      flex-shrink: 0;
+      img {
+        border-radius: 90px;
+      }
+    }
+    .profile-description + h2 {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .acount-name {
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 137px;
+      width: 100%;
+      padding-left: 15px;
+
+      h2 {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        color: #fff;
+        flex-grow: 1;
+        line-height: 21px;
+      }
+      .callusnow {
+        background: none;
+        text-align: left;
+        padding-top: 25px;
+        color: #fff;
+        font-size: 11px;
+        padding-left: 0;
+      }
+    }
+  }
+  .select-price {
+    padding: 10px 8px;
+    .sc-ion-card-md-h {
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+    .select-text {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      background: #fff;
+      color: #472dc2;
+      font-weight: bold;
+    }
+  }
+}
+
+.badge-heading {
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+  .badge-postion {
+    position: relative;
+  }
+  .star {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    right: 21px;
+    background: #f5b823;
+    svg {
+      width: 15px !important;
+      height: 15px !important;
+    }
+  }
+  ion-badge {
+    padding: 2px;
+  }
+  ion-icon {
+    position: absolute;
+    top: 1px;
+  }
+}
+
+.prod-description {
+  margin-bottom: 16px;
+  background: #fff;
+  .prod-desc-text {
+    width: 70%;
+    h2 {
+      margin: 0;
+      padding: 16px 0 10px 0;
+      font-size: 16px;
+      color: #4a4a4a;
+      font-size: 16px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+    }
+  }
+  .prod-img {
+    width: 88px;
+    height: 88px;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    img {
+      width: 100%;
+    }
+  }
+  .product-name {
+    font-size: 12px;
+    color: #4a4a4a;
+    padding: 0;
+    margin: 0;
+  }
+  .ion-star {
+    padding-top: 10px;
+    margin: 0;
+    position: relative;
+    .is {
+      color: #ffaa00;
+      font-size: 20px;
+    }
+    .reviews {
+      padding-left: 10px;
+      font-size: 12px;
+      /* display: flex; */
+      position: absolute;
+      top: 14px;
+      color: #716d6d;
+    }
+  }
+  .starting-price {
+    padding: 15px 0 0 0;
+    margin: 0;
+    font-size: 12px;
+    color: #4a4a4a;
+  }
+  .bold-price {
+    color: #4a4a4a;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 16px;
+    line-height: 40px;
+    b,
+    strong {
+      color: #aaa8a8 !important;
+      font-weight: normal;
+    }
+  }
+  .offer-price {
+    padding-left: 10px;
+    color: #4a4a4a;
+    font-size: 14px;
+    text-decoration: line-through;
+  }
+  .offer-btn {
+    font-size: 11px;
+    margin-left: 12px;
+    --ion-color-light: #0ed93a;
+    --ion-color-light-rgb: 244, 244, 244;
+    --ion-color-light-contrast: #fff;
+    --background: #0ed93a;
+    height: 30px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+.endprotection {
+  padding: 0;
+  h5 {
+    padding: 0;
+    font-size: 12px;
+    color: #4a4a4a;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .end-text {
+    font-size: 12px;
+    color: #4a4a4a;
+    text-align: center;
+    text-align: left;
+    padding: 10px 6px 0 0;
+  }
+}
+
+.product-share {
+  --background: none;
+  border: 1px solid #ededed;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  color: #24272c;
+  font-size: 10px;
+  padding: 0;
+  --ion-color-light: #0ed93a;
+  --ion-color-light-rgb: 244, 244, 244;
+  --ion-color-light-contrast: #fff;
+  --background: none;
+  background: none;
+  button {
+    border: 1px solid #ededed !important;
+  }
+}
+.shareall-btn {
+  padding-left: 0;
+}
+.facebook {
+  @extend .product-share;
+  width: 100%;
+  background-color: #3c5b9b;
+  color: #fff;
+  font-size: 12px;
+  text-transform: capitalize;
+  .fb {
+    font-size: 30px;
+    padding-right: 10%;
+  }
+  svg {
+    position: absolute;
+    left: 10px;
+  }
+}
+.whatsapp {
+  @extend .facebook;
+  background-color: #2cb742;
+  .wh {
+    font-size: 35px;
+    padding-right: 10%;
+  }
+}
+.browse {
+  font-size: 16px;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+.view-all {
+  text-align: right;
+  font-size: 14px;
+  position: relative;
+  padding-right: 15px;
+}
+.browse-by {
+  padding-bottom: 20px;
+  ion-slide {
+    height: 130px;
+    .profile-img {
+      width: 100%;
+      height: 140px;
+      img {
+        width: 140px;
+        height: 140px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+    }
+  }
+  .profile-text {
+    position: absolute;
+    bottom: 15px;
+    color: #fff;
+  }
+}
+
+ion-spinner {
+  svg {
+    animation-duration: 750ms;
+    width: 50px !important;
+    height: 50px !important;
+    color: #472dc2 !important;
+  }
+}
+.overlaybg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clear: float;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(64, 64, 64, 0) 0%,
+    rgba(64, 64, 64, 0) 10%,
+    rgba(89, 85, 85, 0.56) 90%,
+    #747373 100%
+  );
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+.priceonrequest {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.browse-by-indus,
+.browse-by-Dep {
+  margin: 16px 0;
+}
+
+.viewall {
+  position: absolute;
+  top: -18px;
+  right: 0px;
+  width: 20px;
+  svg {
+    width: 10px;
+  }
+  .item-height {
+    height: 190px;
+    overflow-y: scroll;
+    margin: 0 16px 0 0;
+    padding: 0;
+  }
+}
+
+.removproduct {
+  .browse-by-indus {
+    display: none !important;
+  }
+}

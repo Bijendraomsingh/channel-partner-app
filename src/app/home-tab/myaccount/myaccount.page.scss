@@ -1,0 +1,57 @@
+.header-md:after{bottom:0 !important}
+.list-item{
+    top: -100px;
+    margin: 0 16px -90px 16px;}
+.myaccountblock{
+    box-shadow: none;
+    margin-bottom: 20px;
+    border-radius: 0;
+   ion-item{
+       --background:none;
+       --box-shadow:none;
+       border-radius: 0;
+       background-image: linear-gradient( #472dc2, #7d59e3);
+       height: 207px;
+       
+   }
+   .icon-bg{
+    margin-left: 10px;
+    padding: 0;
+    height: 207px;
+    margin-right: 10px;
+       img{ width:64px; height: 64px;border:1px solid #fff;border-radius:100px;}
+   }
+   .client-name{
+       p{font-size:13px; color:#f0f1f2; font-weight: bold; }
+       p + p{font-size:20px; font-weight: normal;color:#fff;}
+   }
+}
+.client-description{
+    flex-grow:4;
+    .lead-no{
+        padding-top:0;
+    background: none;
+    color: #fff;
+        ion-text{ padding:0 15px 0 0; border:0;}
+        ion-text + ion-text{    
+    padding-right: 15px;
+    padding-left: 15px;
+        }
+        .leadsno{
+            font-size:12px;
+            font-weight: normal;
+            color:#d8d8d8;    padding-top: 3px; 
+        }
+        .leadsno + p{font-size:20px; color:#fff; 
+            font-weight: bold;    padding-top: 9px;}
+    }
+
+}
+.profile-item{
+    ion-avatar{
+        margin-top: 12px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+    }
+}

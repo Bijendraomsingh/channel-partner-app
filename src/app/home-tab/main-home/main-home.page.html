@@ -1,0 +1,339 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="heading-padd">
+    <ion-buttons slot="secondary" (click)="searchlistModal()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <!-- 
+        -->
+    </ion-buttons>
+    <ion-buttons slot="primary" (click)="leadformPopover()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="logo-heading" style="line-height:20px;">
+      <img src="../../assets/images/logo.svg">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="home-description" color="none">
+  <h2>Our Top channel Partner</h2>
+  <div style="display: flex;justify-content: center;align-items: center;height: 100px;">
+    <ion-slides [options]="sliderOpts" class="badge-heading" *ngIf="topChannelPartners else loading">
+      <ion-slide *ngFor="let cpartner of topChannelPartners; let i = index">
+        <p class="profile-img">
+          <img src="{{channelbg}}{{cpartner.mobile_logo}}" onError="this.src='../../assets/images/badu-live.png'" />
+        </p>
+        <p class="profile-text">{{cpartner.cpartner}}</p>
+        <ion-badge class="star">
+          <ion-icon name="star"></ion-icon>
+        </ion-badge>
+        <ion-badge slot="star-rating"></ion-badge>
+      </ion-slide>
+    </ion-slides>
+    <ng-template #loading>
+      <ion-spinner name="crescent" style="position: absolute;--color:#3880ff; height:50px; width:50px;"
+        class="spinner-data"></ion-spinner>
+    </ng-template>
+  </div>
+  <ion-card class="home-video paddlr">
+    <img src="../../assets/images/nin-live.png">
+  </ion-card>
+  <ion-card class="callus-btn paddlr">
+    <img src="../../assets/images/call-us.png" style="height: 138px;" />
+    <ion-card-content class="acount-name" color="phonenumber" style="background-color: rgba(45, 15, 183, 0.77)">
+      <p class="profile-description"><img src="../../assets/images/nin-live.png" /></p>
+      <h2>Hi. I am accountManager.
+        Your Account Manager
+        <button color="phonenumber" style="background: none;" class="callusnow">Call us now</button>
+      </h2>
+
+      <!--
+          <p class="profile-description"><img src="{{accountManager.image}}"/></p>
+        <h2>Hi. I am {{accountManager.name}}.
+          Your Account Manager
+          <button color="phonenumber" style="background: none;" class="callusnow">Call us now</button>
+        </h2>
+        -->
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="select-box paddlr">
+    <ion-button lines="none" class="select-item ion-no-margin ion-no-padding" (click)="setFilter()">
+      <ion-text class="select-svgimg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
+
+          <g id="cp-home-filter-price" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="pricing">
+              <circle id="Oval" fill="#472DC2" cx="10" cy="10" r="10" />
+              <path
+                d="M11.2517929,9.05916997 L12.0448616,9.06762032 C12.3471503,9.06921101 12.5946342,8.82431215 12.5962286,8.52061971 C12.597823,8.21692727 12.3529241,7.9694434 12.0492317,7.96784901 L11.2636772,7.95942741 C11.1997125,7.66515171 11.0826071,7.38609077 10.9192047,7.13560218 L12.0656262,7.14786384 C12.3678902,7.14947971 12.615393,6.90460535 12.6170364,6.60091609 C12.6186324,6.29721271 12.3737556,6.04971234 12.0700656,6.04809264 L7.59710471,6 C7.40062654,5.9979808 7.21799214,6.10083201 7.11794564,6.26989426 C7.01789155,6.43896934 7.01563825,6.64857939 7.11203452,6.81976631 C7.20843079,6.99095324 7.38883176,7.09770968 7.58528212,7.09982152 L8.8656251,7.11357043 C9.41869979,7.12027999 9.90173176,7.45637761 10.1109507,7.94706725 L7.5705464,7.91986553 C7.26825766,7.91827485 7.0207738,8.16317371 7.01917941,8.46686615 C7.01758503,8.77055858 7.26248388,9.01804245 7.56617632,9.01963685 L10.099176,9.0468113 C9.89522964,9.49815764 9.45795424,9.81157502 8.95264676,9.84965533 L8.83327644,9.85355922 L7.55580759,9.83982577 C7.33057832,9.8374094 7.12665116,9.97259093 7.0411636,10.180977 C6.95567604,10.389363 7.00591565,10.628813 7.16795094,10.7852657 L10.3356133,13.8435489 C10.4744192,13.9804885 10.6790595,14.0330472 10.8694371,13.9791782 C11.0598146,13.9253093 11.2065759,13.7733184 11.253749,13.5811722 C11.3009221,13.3890259 11.2412335,13.1863504 11.0974473,13.0504422 L8.92413377,10.9521078 C10.0437921,10.917685 10.9936971,10.135225 11.2517929,9.05916997 Z"
+                id="Path" fill="#FFFFFF" />
+            </g>
+          </g>
+        </svg></ion-text>
+      <ion-text class="select-text">Price</ion-text>
+      <ion-text class="arrowicon">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-text>
+    </ion-button>
+    <ion-button lines="none" class="select-item mid-button ion-no-margin ion-no-padding" (click)="setFilter()">
+      <ion-text class="select-svgimg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
+          <g id="cp-home-filter-cat" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="list" fill="#472DC2" fill-rule="nonzero">
+              <path
+                d="M9.99973333,0 C4.47713333,0 6.66666667e-05,4.4774 6.66666667e-05,9.9998 C6.66666667e-05,15.5224667 4.47713333,20 9.99973333,20 C15.5223333,20 19.9999333,15.5224667 19.9999333,9.9998 C19.9999333,4.47713333 15.5223333,0 9.99973333,0 Z M6.0212,13.6308667 C5.6394,13.6308667 5.33046667,13.3218667 5.33046667,12.9399333 C5.33046667,12.5583333 5.63946667,12.2493333 6.0212,12.2493333 C6.4028,12.2493333 6.71193333,12.5583333 6.71193333,12.9399333 C6.71193333,13.3218667 6.4028,13.6308667 6.0212,13.6308667 Z M6.0212,10.6907333 C5.6394,10.6907333 5.33046667,10.3817333 5.33046667,9.9996 C5.33046667,9.618 5.63946667,9.309 6.0212,9.309 C6.4028,9.309 6.71193333,9.618 6.71193333,9.9996 C6.71193333,10.3818 6.4028,10.6907333 6.0212,10.6907333 Z M6.0212,7.75066667 C5.6394,7.75066667 5.33046667,7.44166667 5.33046667,7.05973333 C5.33046667,6.67813333 5.63946667,6.36913333 6.0212,6.36913333 C6.4028,6.36913333 6.71193333,6.67813333 6.71193333,7.05973333 C6.71193333,7.44166667 6.4028,7.75066667 6.0212,7.75066667 Z M14.6696,13.5876 L8.1934,13.5876 C7.81146667,13.5876 7.5018,13.2779333 7.5018,12.896 C7.5018,12.5140667 7.81146667,12.2044 8.1934,12.2044 L14.6696,12.2044 C15.0515333,12.2044 15.3612,12.5140667 15.3612,12.896 C15.3612,13.2779333 15.0515333,13.5876 14.6696,13.5876 Z M14.6696,10.6698667 L8.1934,10.6698667 C7.81146667,10.6698667 7.5018,10.3602 7.5018,9.97826667 C7.5018,9.59633333 7.81146667,9.28666667 8.1934,9.28666667 L14.6696,9.28666667 C15.0515333,9.28666667 15.3612,9.59633333 15.3612,9.97826667 C15.3612,10.3601333 15.0515333,10.6698667 14.6696,10.6698667 Z M14.6696,7.75206667 L8.1934,7.75206667 C7.81146667,7.75206667 7.5018,7.4424 7.5018,7.06046667 C7.5018,6.67853333 7.81146667,6.36886667 8.1934,6.36886667 L14.6696,6.36886667 C15.0515333,6.36886667 15.3612,6.67853333 15.3612,7.06046667 C15.3612,7.4424 15.0515333,7.75206667 14.6696,7.75206667 Z"
+                id="Shape" />
+            </g>
+          </g>
+        </svg></ion-text>
+      <ion-text class="select-text">Category</ion-text>
+      <ion-text class="arrowicon">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-text>
+    </ion-button>
+    <ion-button lines="none" class="select-item ion-no-margin ion-no-padding" (click)="setFilter()">
+      <ion-text class="select-svgimg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
+
+          <g id="cp-home-filter-filter" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="filters">
+              <circle id="Oval" fill="#472DC2" cx="10" cy="10" r="10" />
+              <path
+                d="M13.967439,6.22161525 C13.903021,6.07393145 13.7915367,6 13.6324495,6 L6.36897813,6 C6.21010957,6 6.0984663,6.07393145 6.03414769,6.22161525 C5.96986883,6.37686135 5.99632373,6.50952004 6.11363166,6.61933263 L8.91131238,9.42042916 L8.91131238,12.1817639 C8.91131238,12.2803723 8.94726799,12.365488 9.0191196,12.4375687 L10.4717542,13.8919785 C10.5399089,13.9639 10.6249979,14 10.7271802,14 C10.7725372,14 10.8198022,13.9904675 10.8689952,13.9715419 C11.0165941,13.9071031 11.0904134,13.7953999 11.0904134,13.636313 L11.0904134,9.42044906 L13.8879948,6.61935253 C14.0053424,6.50953994 14.0317377,6.37692105 13.967439,6.22161525 Z"
+                id="Path" fill="#FFFFFF" />
+            </g>
+          </g>
+        </svg></ion-text>
+      <ion-text class="select-text">Filters</ion-text>
+      <ion-text class="arrowicon">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-text>
+    </ion-button>
+  </ion-card>
+  <ion-card style="background:#fff;background: none;box-shadow: none;
+  display: flex; align-items: center;justify-content: center; padding:0;" no-padding no-margin>
+    <div *ngIf="productname else loading" style="width:100%;" class="ion-no-margin ion-no-padding">
+      <div *ngFor="let product of productname; let i = index;" class="ion-no-margin ion-no-padding">
+
+        <ion-card class="prod-description ion-no-margin ">
+          <ion-list class="ion-no-padding">
+            <ion-item no-lines lines="none" style="border-bottom: none !important">
+              <ion-text class="prod-desc-text">
+                <h2>{{product.product_name}}</h2>
+                <p class="product-name">{{product.brand_name}}</p>
+                <p class="ion-star" *ngIf="product.rating_val != 0">
+                  <ion-icon name="star" class="is" *ngIf="product.rating_val > 0"></ion-icon>
+                  <ion-icon name="star" class="is" *ngIf="product.rating_val > 1"></ion-icon>
+                  <ion-icon name="star" class="is" *ngIf="product.rating_val > 2"></ion-icon>
+                  <ion-icon name="star" class="is" *ngIf="product.rating_val > 3"></ion-icon>
+                  <ion-icon name="star" class="is" *ngIf="product.rating_val > 4"></ion-icon>
+                  <ion-icon name="star" class="is" *ngIf="product.rating_val > 5"></ion-icon>
+
+                  <!--<ion-icon name="star" class="is"></ion-icon>
+                <ion-icon name="star" class="is"></ion-icon>
+                <ion-icon name="star-outline" class="is"></ion-icon>
+                <ion-icon name="star-half" class="is"></ion-icon>
+                {{product.rating_val}}
+              *ngFor='let n of range;'
+              -->
+                  <span class="reviews">({{product.total_reviews}} Reviews)</span>
+                </p>
+                <p class="starting-price">Starting Price:</p>
+              </ion-text>
+              <ion-text item-start class="prod-img">
+                <img src="{{productbg}}{{product.image}}"
+                  onError="this.src='../../../assets/images/no-image-available.jpg'" alt="product.image">
+              </ion-text>
+            </ion-item>
+          </ion-list>
+          <ng-template #priceonrequest>
+            <ion-text *ngIf="product.special_price != 0 else price" lines="none" class="ion-no-margin ion-no-padding">
+              <ion-text class="bold-price">&#2352;{{product.special_price}}<b>{{product.price_text}}</b></ion-text>
+              <ion-text class="offer-price">&#2352;{{product.price}}<b>{{product.price_text}}</b></ion-text>
+              <ion-button class="offer-btn button-shadow-none" color="" style="background:#0ed93a;">
+                {{product.discount}}% OFF</ion-button>
+            </ion-text>
+            <ng-template #price>
+              <ion-text class="bold-price">&#2352;{{product.price}}<b>{{product.price_text}}</b></ion-text>
+            </ng-template>
+          </ng-template>
+
+          <ion-item no-lines lines="none" style="height:40px;"
+            *ngIf="product.price_on_request == 1 else priceonrequest">
+            <ion-text class="priceonrequest">Price on request</ion-text>
+          </ion-item>
+          <ng-template #priceonrequest>
+            <ion-text *ngIf="product.special_price != 0 else price" lines="none" class="ion-no-margin ion-no-padding">
+              <ion-text class="bold-price">&#2352;{{product.special_price}}<b>{{product.price_text}}</b></ion-text>
+              <ion-text class="offer-price">&#2352;{{product.price}}<b>{{product.price_text}}</b></ion-text>
+              <ion-button class="offer-btn button-shadow-none" color="" style="background:#0ed93a;">
+                {{product.discount}}% OFF</ion-button>
+            </ion-text>
+            <ng-template #price>
+              <ion-text class="bold-price">&#2352;{{product.price}}<b>{{product.price_text}}</b></ion-text>
+            </ng-template>
+          </ng-template>
+          <ion-item no-lines lines="none">
+            <ion-grid class="endprotection">
+              <h5>Key Features:</h5>
+              <div style="max-height:20px; overflow-y: scroll;">
+                <ion-text *ngFor="let feature of product.feature; let i = index" class="end-text"><strong>•</strong>
+                  {{feature.section_name}}</ion-text>
+
+                <!--<ion-col no-padding size="4" class="end-text" style="text-align: left"><strong>•</strong> {{product.feature}}</ion-col>
+                -->
+              </div>
+            </ion-grid>
+          </ion-item>
+          <ion-card-content style="background:#fff;">
+            <ion-row>
+              <ion-col class="shareall-btn" size="1" style="margin-right: 3%;">
+                <ion-fab vertical="bottom" horizontal="end" color="" style="left: 0;    top: 10px;">
+                  <ion-fab-button class="share button-shadow-none product-share"
+                    style="--background: #fff;--color: #4a4a4a;">
+                    <ion-icon name="share" class="sharebtn" style="width: 17px;"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-list side="top" style="left: -7px;">
+                    <ion-fab-button style="--background: #2caae1;--color: #fff;" (click)="linkedinShare(product)">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </ion-fab-button>
+                    <ion-fab-button style="--background: #007bb6;--color: #fff;"
+                      (click)="shareProduct('twitter', product)">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </ion-fab-button>
+                  </ion-fab-list>
+                  <ion-fab-list side="start">
+                    <ion-fab-button>Vimeo</ion-fab-button>
+                  </ion-fab-list>
+                </ion-fab>
+              </ion-col>
+              <ion-col size="5">
+                <ion-button class="facebook button-shadow-none" (click)="shareProduct('facebook', product)">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g id="Combined" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="facebook" transform="translate(-3.000000, -3.000000)" fill-rule="nonzero">
+                        <g id="fb" transform="translate(3.000000, 3.000000)">
+                          <path
+                            d="M13.6030927,23.2765096 C13.5054975,23.2996867 13.4075448,23.3210409 13.3092346,23.3405721 C13.4075448,23.3210409 13.5054975,23.2996867 13.6030927,23.2765096 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M13.8374285,23.2409216 C13.7907758,23.2534216 13.7441232,23.2648799 13.6974705,23.2765987 C13.7441232,23.2648799 13.7907758,23.2534216 13.8374285,23.2409216 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M13.0475507,23.3552996 C12.9333322,23.3740496 12.8183986,23.3907163 12.7031075,23.4047787 C12.8183986,23.3907163 12.9333322,23.3740496 13.0475507,23.3552996 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M13.2725917,23.3308354 C13.2177168,23.3415125 13.1624843,23.3514083 13.1074306,23.3607833 C13.1624843,23.3514083 13.2177168,23.3415125 13.2725917,23.3308354 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M14.1563111,23.1773189 C14.1151995,23.1900793 14.0739092,23.2028397 14.0326189,23.2150793 C14.0739092,23.2028397 14.1151995,23.1900793 14.1563111,23.1773189 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M14.9477975,22.9802901 C14.9145508,22.9940922 14.8813041,23.0071131 14.8480573,23.0206547 C14.8813041,23.0071131 14.9145508,22.9940922 14.9477975,22.9802901 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M14.7084569,23.0455886 C14.6723502,23.0593907 14.6360648,23.0734532 14.5997794,23.0867344 C14.6360648,23.0734532 14.6723502,23.0596511 14.7084569,23.0455886 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M14.3952942,23.1244101 C14.3570426,23.137431 14.3184335,23.1496705 14.2798244,23.1621705 C14.3184335,23.1496705 14.3570426,23.137431 14.3952942,23.1244101 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M12.6993539,23.3941924 C12.6376866,23.4017445 12.5760193,23.4085153 12.5141733,23.4145049 C12.5760193,23.4085153 12.6376866,23.4017445 12.6993539,23.3941924 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M23.4285714,11.7142857 C23.4285714,5.24565343 18.182918,0 11.7142857,0 C5.24565343,0 0,5.24565343 0,11.7142857 C0,18.182918 5.24565343,23.4285714 11.7142857,23.4285714 C11.7831029,23.4285714 11.8515625,23.4271415 11.9202009,23.4258902 L11.9202009,14.306815 L9.4034598,14.306815 L9.4034598,11.3737749 L11.9202009,11.3737749 L11.9202009,9.2154192 C11.9202009,6.71226287 13.4482989,5.34986221 15.6811916,5.34986221 C16.7504491,5.34986221 17.66956,5.42958287 17.9375,5.4651533 L17.9375,8.08127707 L16.3977835,8.08127707 C15.183027,8.08127707 14.9477975,8.658626 14.9477975,9.5057024 L14.9477975,11.3737749 L17.852417,11.3737749 L17.4738334,14.306815 L14.9477975,14.306815 L14.9477975,22.975987 C19.8441816,21.5722961 23.4285714,17.061288 23.4285714,11.7142857 Z"
+                            id="Path" fill="#FFFFFF" />
+                          <path
+                            d="M12.4882551,23.4087632 C12.3663505,23.4202215 12.2439096,23.4293361 12.1211112,23.4353257 C12.2439096,23.4293361 12.3663505,23.4202215 12.4882551,23.4087632 Z"
+                            id="Path" fill="#000000" />
+                          <path
+                            d="M12.1148551,23.4304155 C12.0501491,23.4335404 11.9852644,23.4358842 11.9203796,23.4374467 C11.9852644,23.4358842 12.0501491,23.4335404 12.1148551,23.4304155 Z"
+                            id="Path" fill="#000000" />
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  Facebook
+                </ion-button>
+              </ion-col>
+              <ion-col size="5" class="ion-align-self-center ion-text-center">
+                <ion-button class="whatsapp button-shadow-none" (click)="shareProduct('whatsapp', product)">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+
+                    <g id="Combined" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="whatsapp" transform="translate(-3.000000, -3.000000)">
+                        <image id="whatsapp-icon-logo-6E793ACECD-seeklogo.com" x="3" y="3" width="24" height="24"
+                          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEGWlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VQNcC+8AAA0JSURBVGgFxVoJcNTVGf/2PrKb3SRsQgK5TJAjQAigVRyhYLU442AdFQ9sqzgy6mBVFK1lcGhtaVEL9aYiUzva1lptrbUOOAg6KASMQgyBGI5IQrK5Ntdu9j76+97u/5//LtkkEJw+ePvu73rf+973vn9UdIFSLBYzAFRJJBIp12g05SgvV6vVM9CnQvomGo1Wo/0N2qe6u7ubHQ6H+0KgVo0HCIjOBKHfB8HXAc4C5FJk8ygwA1jXAqaqsXZHIBDYnZGR4RxlzYUd9vl8RaFQaAMIOY48noSNiZ4BgOeRZ11YKoeB1tPTY4PU1gNpx3ioTrO2LxwOvwjhFA+DOm3XmFXI4/FcZTabN2PrZw8PLUYn/S101NtEzcFW6g72kD8aoBj+mVQGyjJkU7E+ny42lVCZYTLp1frhwDBvp8HIk3q9/o3hJqT2jYUBFdTlca1WuwGL+aAmJSb6v65PqNb9FXn8ToqE/RiPJc1RNtRaI5l1Dppqm0VL7YuoyjJNOSzVg9jpbThbT0BgIx72ERmANPQA9AIArZIgS2Wj7zS97vwHneivoWh4ELZGgyE1qdQjgsQc7Ek0iiJKzEyBtYKW5/6IFmRWSqClMgz8O71e790Wi6VD6kwt02Krr6/XT5kyZbtOp7tDuSgUC9PWtrdob8cHkLYHNlLHhlI55ZzqsWhIMDIzeyGtnvRjytHZlesjUKe9vb29t+Xm5rYrB6R6Oswqv9//ssFguFeayOWZYAdtPLWFOvrrQLQWdKuVw+OoR8Wu2CxFtLp4Nc21TJdhYRciaOwAE7fn5OQMyAOJyrAMYNseNplMm5WTG3yn6DeNG2nQ1wY1GfYAKqefXx27q9PbaWXJarom6zIZBpgIwfJthyrfjzORdMDOYgDEXwYLsBuTTRKEE75merJhPfkDXXGVkQa+kzJCGq2F7i1bQ0vslyox+AYHB+/DefizsjNJB1paWkzQ+eeVxPeE+ump4xvJ7+sE8VqCNBIZ247djUFqMRzIoX5p/HxLNYVDbtp26kWqHzyhpNUIM77B6XSWKDuTGLDb7ffAXF6inPDbb1+kAXcTDEyceGEiwQRFI6TXZZPZkE9aTYZox80n7/B4s5oCPhdtAROeCCxcPLG2TMrKyvq51MGlzACknw29f0Q5+O+uj+lEx9642kSZaEg1wgcuQosKl9Orc16m1+dspWdnbSGj0YExnLfEvHGXINfV30jbWt+SSYL+66DeN3d2ds6ROmUGIP3boTpF0gBz/vfmN0UzST1g9irzr6EHC++kTI2FtFCrImM+LZ54LRhjdTpf1Tl7HSRH+50f0XHvtxJZXFozMzPle0kwUFNTw5zdpZz1budO8g6eQRemsMowYbiADIYJ9FDRSuVUUV824SrS6jLFHGn++EqABc5QsJ/+0vYvGR92QQu3/DpozCTuFAxMnjx5Lg6vfBWGYiH62LkDwyrAGJIMRYM0LWse2bWZMkCpkqefQBfZAQJzlGvGW2f4x1wHyRnolFCpQOsEm812NXcIBuCPLwVn7AuIdGjgKA14TqM+JH2WBv7TVMuUxKyzi2tzr47fEbBKYjIvGGdmryMY6KXdPftlhBAKeNBdwx2CAej+QnkUlU97qikWDqIGApIykWXoelAuEfX5ttlkMRdgSThlXSqcc2uzua7prZHxsbChRnMaGhqs2kOHDtnBTZJL2NhXj8lx9ZFXcQXi6Ar1JHUpG2cCTvL6eFwNwTORFyAxGFikDnczuWFYrGyy0QMGCmA1i9TZ2dl8GBzcy8kT8VK/n/0mrErZfibqSN8RMS/1xxvx0ZbG5ygU6BPLUteed1toAJE/2EdnfEMvT9xXOtzKhWro/0RuSAS58BAJBT3xZqpNJw0199RSO1yK1PT7k6+Qs+swLB+OUuq6cbZjEbaA/iS8EKYGrv7FahCfrSSmDy5yNDK8JeFdCfr76I0z7yiXiLpNZxMl79J3kaPhCPWGk5xRLfBcqsaBMCqpCfJlJB4cUL4UFcIAJKymfS3v0zeeU8pldE/RHZRtL8dtjMN/1rrhYJ1LH1u1KIUY9lBSYwcK+QejQ0mnjlvT9FJUURgq9nTDM8T3hZRMGgM9ePEauMN8mV3YGzlOC5FWLWs6o+XjHVAHg5LCx0mxwT1gr3NEKeIsdHR9TS+c2h5flPittM2gVdMfJY3GKJgYHgb7UmAQZprL4eecvTu883aNVYkvotaq63kHupDlgRx9Fmm1JsDljWEm02R4p3tOvkU7Oj+R12pgPq/OW0T3z14Hl8OOt/IwdwnUq3ziFfTDqXeTzVoElQMzyGnxJKyQSqOlPGOujAuqH9aoNDXqgYGBNjCQMDtEmXhMZJpyhWc5kiozJEb8x7pNVIubW0qCCcdCemreZprkmAMmQsgJlYKgHLZp9OuK9fTARSvp1e+9Rj+tfCxxdiKJeYCbtAEwCrBCBq2VCk0TJTRcRhEtOc1WyAkG2GuTU3km3qS8A6OZP0g86MeD56sn6Jh76PGhgrWaYZ1CL81/jlZUrqUsWwlUJkIZGXm0btY6smjFZUQZuNVvLlhGr122je6u+gXmlQrBJeMFWaAl11xENjDBic8EAmAevB5P47aC3+1y/RUX2m1c57TXdYA2HViDzRPD8c6RfqHLpgwHra/aRJV2jucmpwAcvH2uGsqHCkyzlicPJlpRilJ1z1e08cDDgkDlJKbipooH6M7iW0Q3GIiCgf3Hjh1bLHwhRCB2KRdcYp8DaeVjB/iQYWS0jEPvG+yiX9aspQ/aP1KCEnUDggCLHQvSEs+TGEV/aADCxnkUOpToRJ0t25LcK3malMJg4PP58+eHBAN9fX27sB3yLWGESVw0mR8ofLj5MI8h4wYO+F209cun6Ff1m0RoUcI2ljIMYR3urYUKsWlmdhI4QcM0xyVUZCqQwSBWBPUPfcgdgoGKiopmmNOd8gxUbiu8kYzmPKGTfBxGz3wDq+HvhWn/iXfpvs9X0vamN6k7kN75k/DBsFLdwDE62AISIIghXDHS6i20ovR2aSqrVxTCroPWHOBO+Q2watWqHqvVege8PKH4JtjyAEzXkY59wq+TIYyhwjY7FBigox3VtKNtJ9V5T+ASMlAOArypQd0wXO93Wv9Dr9T+jvxeV9yXEjiwCzAil5cuo5smL5Oxwnz6cWafKS4uruZO+ZS+/fbbmiVLlnyI6Jd4KPAgA791z4006EYwa+i9w0NjTiL0gsue7bg5I5cK7VOpxFpGZsRFu/zdeG0dJlfvccCDyVDgYPXNziqnly7fSnZ93M/CpGh/f/9R7MKViE70MRG4cuNp+fLlEXC2HS2ZgVZfO8IbPG+Yt0Fi3egFAr4aoankdTupob+VGlS742ouxMfjrAgKHCBeb7LRmlmPK4ln9QkgzP8snsCCeMYtM8ANBI5mcimlatcXFPK7hfTiGKWR8yyhWhIzSRDY6iQSO5JanZFWzlpL87Ll6AmPhvFt7eN9+/b9TZrLpczAhg0b1Hha/kA5eBA6LFwKvtC+68QoVFHS6cx0V9XjdP2kpUqMMbfb3YovRI9CU9g/kZN8BmBXSxCNrsMhsfCoLxKgFbtugP63QzfjKsC7gG1EAZ0WXqu8XAZ4fhWGiZvaWkA/m7uOFjmuSAID2tww9T8pKCh4L2kADXkH4E4skIjnSUcHGsjr4VBGDA+cuG1Wa3RAkks2mNd2VwNFgn7BCNbxkvNKfFhZGDOKFtPDM9dSIQcFFAnmna3OusLCwrOI52kyA3jYJ6nPHuceeEt+MloclI+HymzHfLoUF8oMOGMZGjNVd9fQnxpeodPth3FhY1dhQfDSVqAeoYpdZFeaBZLvqKBbp95JS/NFmCdpEROPYO76kpKSF5IGFA0hOo5K5+Xl1YIJOeiz07mLdPj6UpVdSVmI2adLB+G/vP/tP2Hzv6BBT5fiJgVoaWPEERI/4FNHJnM2lTnm0nUly2hR7hW4TZMZZzXFZdWDjxqPQfJsGdMmgQL6NQ/xxgNQBfliS7sizQBHJY70HqX6vjpqQjS7B+F4Pkec+PLKMTmo2FpCFfaZYhcVtj0JIohnW18Hi/MQPnF9kjSYrgFuH8HC/3uCjfe0tbX9oba2dujlko7oRL84AzCfV400DwzG4Dw1QScPov4ZVK0K0exbcG8IizXS2rGM4cuLH/kDPK42Q+pDMcQxLFbhkDig//VQHzm4BUIJf8PQCq/vSzhNn0Iwn4OBejh98sutsbFxOtRuBUzvDYhsTwczksaPAS3incFgDMI4CRP5IfKbZWVlX4xpYcokFQ7K9ZDme7gougD0a5jTTyGJvUaj8WscoFFdSdyMJtjnKjCxEELgv1ApxysvF7tqRlsPvWSUIcD1ot4FoZyEMGpA9GeQek1VVVVfCk3n1FQ1NTU9hhBdPb56fAkJc0xxXIm/L2NXs+AtWkCsGVLmOKYPRLvxJzZ9paWl/nEhSFn8P5gEy7/vq1AFAAAAAElFTkSuQmCC" />
+                      </g>
+                    </g>
+                  </svg>
+                  Whatsapp
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="browse-by-Dep ion-no-margin ion-no-padding" *ngIf="i == 1">
+          <ion-item no-lines lines="none">
+            <ion-text class="browse">Browse by Department</ion-text>
+            <ion-text slot="end" class="view-all">View All <p class="viewall"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" /></svg></p>
+            </ion-text>
+          </ion-item>
+          <ion-item no-lines lines="none">
+            <ion-slides [options]="sliderOptsDep" *ngIf="getDepartmentsname else loading" loop="true" class="browse-by">
+              <ion-slide class="badge-postion" *ngFor="let getdpart of getDepartmentsname"
+                (click)="selectedSearch(getdpart.name, getdpart.slug, 'business_function')">
+                <p class="profile-img"><img
+                    src="https://nweb.techjockey.com/assets/images/techjockey/business_function/{{getdpart.image}}"
+                    onError="this.src='../../assets/images/badu-live.png'"></p>
+                <p class="overlaybg"></p>
+                <p class="profile-text">{{getdpart.name}}</p>
+              </ion-slide>
+            </ion-slides>
+            <ng-template #loading>
+              <ion-spinner name="crescent" style="--color:#3880ff;margin: 50px; height:50px; width:50px;"
+                class="spinner-data"></ion-spinner>
+            </ng-template>
+          </ion-item>
+
+        </ion-card>
+        <ion-card class="browse-by-indus ion-no-margin ion-no-padding" *ngIf="i == 3">
+          <ion-item no-lines lines="none">
+            <ion-text class="browse">Browse by Industries</ion-text>
+            <ion-text slot="end" class="view-all">View All <p class="viewall"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" /></svg></p>
+            </ion-text>
+          </ion-item>
+          <ion-item no-lines lines="none">
+            <ion-slides [options]="sliderOptsDep" loop="true" *ngIf="getIndustriesname else loading" class="browse-by">
+              <ion-slide class="badge-postion" *ngFor="let industries of getIndustriesname"
+                (click)="selectedSearch(industries.name, industries.slug, 'industry')">
+                <p class="profile-img"><img
+                    src="https://nweb.techjockey.com/assets/images/techjockey/industry/{{industries.image}}"
+                    onError="this.src='../../assets/images/badu-live.png'"> </p>
+                <p class="overlaybg"></p>
+                <p class="profile-text">{{industries.name}}</p>
+              </ion-slide>
+              <ng-template #loading>
+                <ion-spinner name="crescent" style="--color:#3880ff;margin: 50px; height:50px; width:50px;"
+                  class="spinner-data"></ion-spinner>
+              </ng-template>
+            </ion-slides>
+          </ion-item>
+        </ion-card>
+      </div>
+    </div>
+  </ion-card>
+  <ng-template #loading>
+    <ion-spinner name="crescent" style="--color:#3880ff;margin: 50px; height:50px; width:50px;" class="spinner-data">
+    </ion-spinner>
+  </ng-template>
+  <div style="height: 10px;"></div>
+</ion-content>

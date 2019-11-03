@@ -1,0 +1,135 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="heading-padd">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="heading-size">Contact Us </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onclickcontact()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background:#f5f5f5">
+  <!--<ion-card class="profilecontact paddlr">
+     <ion-item
+      style="--background:none;border-bottom: none !important;"
+      class="call-height-bg"
+      no-lines
+      lines="none"
+    >
+      <ion-label class="icon-bg"
+        ><img src="../../assets/images/badu-live.png"
+      /></ion-label>
+      <ion-label class="talk-tous"
+        ><p>Talk to us</p>
+        <p>We’d love to help</p></ion-label
+      >
+      <ion-button slot="end" class="videocall">Video Call</ion-button>
+    </ion-item> 
+  </ion-card>-->
+  <ion-card class="call-now-c paddlr" style="margin-top:10px">
+    <ion-item
+      style="--background:none;"
+      class="call-height-bg"
+      no-lines
+      lines="none"
+    >
+      <ion-label
+        ><p>Relax, you’ve come</p>
+        <p>
+          to the right place
+        </p></ion-label
+      >
+      <ion-button slot="end" class="call-now-view"
+        ><a href="tel:+919319462012,11231" style="color:#fff;"
+          >Call Now</a
+        ></ion-button
+      >
+    </ion-item>
+  </ion-card>
+  <ion-card class="contact-detail paddlr">
+    <form [formGroup]="contactuserForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <!-- <ion-list *ngIf="datastatus != true else showfile"> -->
+        <ion-item no-padding>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input
+            type="text"
+            formControlName="name"
+            [(ngModel)]="requestData.name"
+          ></ion-input>
+          <div
+            style="color: red; padding-top: 0.2rem"
+            *ngIf="contactuserForm.hasError('required', 'name')"
+          ></div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Email </ion-label>
+          <ion-input
+            type="email"
+            formControlName="email"
+            [(ngModel)]="requestData.email"
+          ></ion-input>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input
+            type="number"
+            formControlName="contact_number"
+            [(ngModel)]="requestData.contact_number"
+            pattern="[0-9]*"
+            minlength="10" maxlength="10"
+            
+          ></ion-input>
+        </ion-item>
+        <div color="phonenumber" class="registerbutton ">
+          <!-- <ion-button
+            shape="round"
+            size="large"
+            class="register-btn contact-us"
+            [disabled]="!registrationForm.valid"
+            (click)="regForm()"
+            >Request a Call Back</ion-button
+          > -->
+          <ion-button
+            shape="round"
+            size="large"
+            class="register-btn contact-us"
+            (click)="regForm()"
+            [disabled]="!contactuserForm.valid"
+            >Request a Call Back</ion-button
+          >
+        </div>
+      </ion-list>
+      <ng-template #showfile>
+        <div
+          class="contact_us_shortly"
+          style="background: #f0f1f2;"
+          color="primery"
+        >
+          <ion-grid class="contact_us_shortly_inner">
+            <ion-row>
+              <p class="contact_us_relex">
+                Thank you! We will call you back shortly
+              </p>
+              <img
+                src="../../../assets/images/contact_app_images.png"
+                class="img-responsive"
+              />
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ng-template>
+    </form>
+  </ion-card>
+</ion-content>

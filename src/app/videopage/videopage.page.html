@@ -1,0 +1,37 @@
+<ion-title class="video-bg">
+  <ion-text class="top-content"
+    >How to Start Your<br />
+    Business from Home
+  </ion-text>
+  <ion-text class="bottom-content"
+    >when an unknown printer took <br />
+    a galley of type and scrambled it to make a type
+  </ion-text>
+  <ion-button size="small" class="skip" (click)="selectskip()">skip</ion-button>
+</ion-title>
+<ion-footer>
+  <ion-toolbar color="primary" class="social-btn">
+    <ion-button
+      no-padding
+      no-margin
+      clear
+      class="mut-btn"
+      shape="round"
+      slot="start"
+      size="small"
+    >
+      <ion-icon name="volume-mute"></ion-icon>
+    </ion-button>
+    <ion-button
+      no-padding
+      no-margin
+      clear
+      class="like-btn"
+      shape="round"
+      slot="end"
+      size="small"
+    >
+      <ion-icon name="heart-empty" (click)="like_unlike()"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

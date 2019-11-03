@@ -1,0 +1,33 @@
+<div class="price-list-box" *ngIf="allFilters; else loading">
+  <div style="
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+  overflow: scroll;">
+    <ion-list *ngFor="let filter of allFilters; let i = index" no-padding no-margin class="ion-list-border">
+      <ion-item (click)="toggleGroup(i)" lines="none" class="catname" no-padding>
+        {{ filter.name }}
+        <ion-icon slot="end" item-right [name]="isGroupShown(i) ? 'remove' : 'add'" class="plus-icon"></ion-icon>
+      </ion-item>
+      <ion-item *ngIf="isGroupShown(i)" [ngClass]="{ active: isGroupShown(i) }" class="item-height" lines="none">
+        <ion-list no-padding no-margin class="list-full">
+          <ion-item *ngFor="let fil of filter.children; let i = index" lines="none" touchable no-padding>
+            <ion-checkbox slot="start" name="{{ fil.type }}" class="entry-check" value="{{ fil.val }}"
+              (click)="selectFilters(fil.type, fil.val, fil.name)"></ion-checkbox>
+
+            <ion-label class="entry-text">{{ fil.name }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-footer class="price-footer">
+    <ion-button class="clearallfilters" shape="round" fill="outline" size="large">Clear All Filters
+    </ion-button>
+    <ion-button class="apply-filteers" shape="round" size="large" (click)="applyFilter()">Apply filters</ion-button>
+  </ion-footer>
+</div>
+<ng-template #loading>
+  <ion-spinner name="crescent" style="--color:#3880ff;margin: 50px; height:50px; width:50px;" class="spinner-data">ddd
+  </ion-spinner>
+</ng-template>

@@ -1,0 +1,133 @@
+<ion-content class="myaccountDiv">
+   <ion-card
+    class="ion-no-padding ion-no-margin button-shadow-none blue-background"
+  >
+    <ion-button (click)="goBack()" class="searchback">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-img src="../../assets/images/group_profile.png"></ion-img>
+    <div class="edit-image">
+      <img src="contactDetail.image"  onError="this.src='../../assets/images/modi_pic.jpg'"/>
+      <!-- <div *ngFor="let img of images">
+        <img [src]="img.path" />
+      </div> -->
+      <ion-icon
+        name="add"
+        class="edit-plus"
+        (click)="selectImage()"
+      ></ion-icon>
+    </div>
+    <ion-list>
+      <ion-item *ngFor="let img of images; index as pos" text-wrap>
+        <ion-thumbnail slot="start">
+          <ion-img [src]="img.path"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          {{ img.name }}
+        </ion-label>
+        <ion-button slot="end" fill="clear" (click)="startUpload(img)">
+          <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+        </ion-button>
+        <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <!-- <ion-button (click)="TakePhotes()" expand="full"> TakePhotos </ion-button> -->
+
+  <!-- <h3 *ngIf="images.length == 0" text-center>Please Select Image!</h3>
+  <ion-list>
+    <ion-item *ngFor="let img of images; index as pos" text-wrap>
+      <ion-thumbnail slot="start">
+        <ion-img [src]="img.path"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        {{ img.name }}
+      </ion-label>
+      <ion-button slot="end" fill="clear" (click)="startUpload(img)">
+        <ion-icon slot="icon-only" name="cloud-upload">startUpload</ion-icon>
+      </ion-button>
+      <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
+        <ion-icon slot="icon-only" name="trash">deleteImage</ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list> 
+
+  <ion-footer>
+    <ion-toolbar color="primary">
+      <ion-button
+        fill="clear"
+        expand="full"
+        color="light"
+        (click)="selectImage()"
+      >
+        <ion-icon slot="start" name="camera"></ion-icon>
+        Select Image</ion-button
+      >
+    </ion-toolbar>
+  </ion-footer>-->
+
+  <ion-card
+    class="ion-no-padding ion-no-margin button-shadow-none myprofile-form "
+  >
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-item no-padding>
+          <ion-label position="floating" ngMo>NAME</ion-label>
+          <ion-input
+            formControlName="first_name"
+            [(ngModel)]="contactDetail.first_name"
+          ></ion-input>
+          <!-- <ion-button class="edit-button">Edit</ion-button> -->
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">EMAIL ADDRESS </ion-label>
+          <ion-input
+            formControlName="email"
+            [(ngModel)]="contactDetail.email"
+          ></ion-input>
+          <!-- <ion-button class="edit-button">Edit</ion-button> -->
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">PASSWORD</ion-label>
+          <ion-input
+            formControlName="password"
+            type="password"
+            [(ngModel)]="contactDetail.password"
+          ></ion-input>
+          <!-- <ion-button class="edit-button">Edit</ion-button> -->
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input
+            formControlName="phone"
+            [(ngModel)]="contactDetail.phone"
+            type="tel"
+            minlength="10"
+            maxlength="10"
+          ></ion-input>
+          <!-- <ion-button class="edit-button">Edit</ion-button> -->
+        </ion-item>
+        <div color="phonenumber" class="leadformbutton ">
+          <ion-button
+            shape="round"
+            size="large"
+            class="leadform"
+            (click)="savebtn()"
+            >Save</ion-button
+          >
+          <!-- <ion-button
+            shape="round"
+            size="large"
+            class="leadform"
+            [disabled]="userForm.invalid"
+            (click)="savebtn()"
+            >Save</ion-button
+          > -->
+        </div>
+      </ion-list>
+    </form>
+  </ion-card>
+</ion-content>

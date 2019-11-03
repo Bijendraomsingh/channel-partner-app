@@ -1,0 +1,251 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="heading-padd">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="heading-size">My Account</ion-title>
+    <ion-buttons slot="start" (click)="myaccountclick()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content color style="background:#f0f1f2 !important;">
+  <ion-card class="myaccountblock ion-no-padding ion-no-margin">
+    <ion-item no-margin no-lines lines="none">
+      <ion-label class="icon-bg"><img src="../../assets/images/badu-live.png"></ion-label>
+      <ion-label class="client-description">
+        <ion-title no-padding class="client-name">
+          <p>{{username}}</p>
+        </ion-title>
+        <ion-item class="lead-no" lines="none" no-padding no-margin>
+          <ion-text>
+            <p class="leadsno">My Shares</p>
+            <p>{{totalShared}}</p>
+          </ion-text>
+          <ion-text>
+            <p class="leadsno">My Leads</p>
+            <p>{{totalLeads}}</p>
+          </ion-text>
+          <ion-text>
+            <p class="leadsno">My Earning</p>
+            <p>{{totalEarnings}}</p>
+          </ion-text>
+        </ion-item>
+      </ion-label>
+
+    </ion-item>
+  </ion-card>
+  <ion-card class="list-item">
+    <ion-item class="profile-item" lines="none" (click)="myprofile()">
+      <ion-item lines="none" no-padding>
+        <ion-avatar slot="start">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px"
+            viewBox="0 0 35 35" version="1.1">
+
+            <g id="profile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Group" transform="translate(1.000000, 2.000000)" fill="#FF6399">
+                <rect id="Rectangle" x="0" y="0" width="32" height="32" rx="16" />
+              </g>
+              <g transform="translate(9.000000, 10.000000)" fill="#FFFFFF" fill-rule="nonzero" id="Shape">
+                <path
+                  d="M8.67812701,2.76223489e-13 C10.9772332,2.76223489e-13 12.8583578,1.88397277 12.8583578,4.18664386 C12.8583578,6.48931495 10.9772332,8.37325 8.67812701,8.37325 C6.3790208,8.37325 4.49789625,6.48927723 4.49789625,4.18660614 C4.49789625,1.88393505 6.37898315,2.76223489e-13 8.67812701,2.76223489e-13 Z" />
+                <path
+                  d="M5.2307801,10 L11.7692199,10 C14.4499823,10 16.6567066,12.6143109 17,16 L0,16 C0.343258018,12.6357586 2.55001767,10 5.2307801,10 Z" />
+              </g>
+            </g>
+          </svg>
+        </ion-avatar>
+        <ion-label>
+          <h2>My Profile</h2>
+        </ion-label>
+      </ion-item>
+    </ion-item>
+    <ion-item class="profile-item" lines="none">
+      <ion-item lines="none" no-padding (click)="myshares()">
+        <ion-avatar slot="start">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px"
+            viewBox="0 0 35 35" version="1.1">
+            <g id="my-shares" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Group-Copy" transform="translate(2.000000, 2.000000)">
+                <rect id="Rectangle" fill="#774FFF" x="0" y="0" width="32" height="32" rx="16" />
+                <g id="Group-2" transform="translate(9.000000, 8.000000)" fill="#FFFFFF">
+                  <path
+                    d="M6,1 C6.33333333,1 6.66666667,1 7,1 C7.33333333,1 7.66666667,1 8,1 C10.209139,1 12,2.790861 12,5 L12,13 L12,13 L2,13 L2,5 C2,2.790861 3.790861,1 6,1 Z"
+                    id="Rectangle-3" />
+                  <circle id="Oval" cx="7" cy="2" r="2" />
+                  <circle id="Oval-Copy" cx="7" cy="14" r="2" />
+                  <path
+                    d="M1.5,10 C3.33333333,10 5.16666667,10 7,10 C8.83333333,10 10.6666667,10 12.5,10 C13.3284271,10 14,10.6715729 14,11.5 C14,12.3284271 13.3284271,13 12.5,13 C10.6666667,13 8.83333333,13 7,13 C5.16666667,13 3.33333333,13 1.5,13 C0.671572875,13 1.01453063e-16,12.3284271 0,11.5 C-1.01453063e-16,10.6715729 0.671572875,10 1.5,10 Z"
+                    id="Rectangle-4" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </ion-avatar>
+        <ion-label>
+          <h2>My Shares</h2>
+        </ion-label>
+      </ion-item>
+    </ion-item>
+    <ion-item class="profile-item" lines="none" (click)="myleads()">
+      <ion-item lines="none" no-padding>
+        <ion-avatar slot="start">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px"
+            viewBox="0 0 35 35" version="1.1">
+
+            <g id="my-leads" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="profile" transform="translate(9.000000, 10.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path
+                  d="M8.67812701,2.76223489e-13 C10.9772332,2.76223489e-13 12.8583578,1.88397277 12.8583578,4.18664386 C12.8583578,6.48931495 10.9772332,8.37325 8.67812701,8.37325 C6.3790208,8.37325 4.49789625,6.48927723 4.49789625,4.18660614 C4.49789625,1.88393505 6.37898315,2.76223489e-13 8.67812701,2.76223489e-13 Z"
+                  id="Shape" />
+                <path
+                  d="M5.2307801,10 L11.7692199,10 C14.4499823,10 16.6567066,12.6143109 17,16 L0,16 C0.343258018,12.6357586 2.55001767,10 5.2307801,10 Z"
+                  id="Shape" />
+              </g>
+              <g id="Group-Copy-3" transform="translate(1.000000, 2.000000)">
+                <rect id="Rectangle" fill="#3DE1CD" x="0" y="0" width="32" height="32" rx="16" />
+                <g id="Group-4" transform="translate(7.000000, 8.000000)">
+                  <rect id="Rectangle-5" stroke="#FFFFFF" stroke-width="2" x="1" y="1" width="16" height="16" rx="4" />
+                  <path
+                    d="M14,11 L14,13 L4,13 L4,11 L14,11 Z M14,0 C16.209139,-4.05812251e-16 18,1.790861 18,4 L18,8 L0,8 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 L14,0 Z M4,2 C2.8954305,2 2,2.8954305 2,4 C2,5.1045695 2.8954305,6 4,6 C5.1045695,6 6,5.1045695 6,4 C6,2.8954305 5.1045695,2 4,2 Z M15,3 L7,3 L7,5 L15,5 L15,3 Z"
+                    id="Combined-Shape" fill="#FFFFFF" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </ion-avatar>
+        <ion-label>
+          <h2>My Leads</h2>
+        </ion-label>
+      </ion-item>
+    </ion-item>
+    <ion-item class="profile-item" (click)="myearningsclick()" lines="none" (click)="myyearnings()">
+      <ion-item lines="none" no-padding>
+        <ion-avatar slot="start">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px"
+            viewBox="0 0 32 32" version="1.1">
+            <g id="cp-account-earning" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Group-17">
+                <circle id="Oval-Copy-2" fill="#4FB0FF" cx="16" cy="16" r="16" />
+                <g id="₹-2" transform="translate(10.000000, 6.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                  <path
+                    d="M1.62,6.26 L6.46,6.26 C6.36,5.52 6.08,4.94 5.6,4.5 C5,3.98 4.18,3.72 3.14,3.72 L1.3,3.72 L1.64,2.72 L10.74,2.72 L10.4,3.72 L6.8,3.72 C7.56,4.36 8,5.2 8.1,6.26 L10.7,6.26 L10.36,7.26 L8.08,7.26 C7.98,8.06 7.64,8.72 7.08,9.24 C6.4,9.86 5.54,10.26 4.46,10.44 C4.7,10.6 5.04,10.98 5.52,11.62 L9.68,17 L7.46,17 L3.86,12.16 C3.48,11.64 3.12,11.28 2.8,11.06 C2.4,10.8 1.94,10.66 1.42,10.66 L1.42,9.52 L2.5,9.52 C3.82,9.52 4.82,9.26 5.5,8.76 C6.02,8.38 6.32,7.88 6.44,7.26 L1.28,7.26 L1.62,6.26 Z"
+                    id="₹" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </ion-avatar>
+        <ion-label>
+          <h2>My Earnings</h2>
+        </ion-label>
+      </ion-item>
+    </ion-item>
+    <!-- <ion-item class="profile-item" lines="none" >
+                      <ion-item lines="none" no-padding>
+                          <ion-avatar slot="start">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 35 35" version="1.1">
+                            <g id="my-dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Group-3" transform="translate(2.000000, 2.000000)">
+                                        <g id="Group-Copy-7" fill="#F3AF20">
+                                            <rect id="Rectangle" x="0" y="0" width="32" height="32" rx="16"/>
+                                        </g>
+                                        <g id="Group-6" opacity="0.936128162" transform="translate(5.000000, 6.000000)">
+                                            <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="20" height="20"/>
+                                            <path d="M17.6388889,16.9444444 L3.05555556,16.9444444 L3.05555556,2.36111111 C3.05555556,1.97708333 2.74444444,1.66666667 2.36111111,1.66666667 C1.97777778,1.66666667 1.66666667,1.97708333 1.66666667,2.36111111 L1.66666667,16.9444444 C1.66666667,17.7104167 2.28958333,18.3333333 3.05555556,18.3333333 L17.6388889,18.3333333 C18.0222222,18.3333333 18.3333333,18.0229167 18.3333333,17.6388889 C18.3333333,17.2548611 18.0222222,16.9444444 17.6388889,16.9444444 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"/>
+                                            <path d="M5.75163399,7.54901961 C5.12091503,7.54901961 4.60784314,8.14760349 4.60784314,8.88344227 L4.60784314,13.077342 C4.60784314,13.8131808 5.12091503,14.4117647 5.75163399,14.4117647 L7.38562092,14.4117647 C8.01633987,14.4117647 8.52941176,13.8131808 8.52941176,13.077342 L8.52941176,8.88344227 C8.52941176,8.14760349 8.01633987,7.54901961 7.38562092,7.54901961 L5.75163399,7.54901961 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"/>
+                                            <path d="M10.6535948,6.56862745 C10.0228758,6.56862745 9.50980392,7.08169935 9.50980392,7.7124183 L9.50980392,13.2679739 C9.50980392,13.8986928 10.0228758,14.4117647 10.6535948,14.4117647 L12.2875817,14.4117647 C12.9183007,14.4117647 13.4313725,13.8986928 13.4313725,13.2679739 L13.4313725,7.7124183 C13.4313725,7.08169935 12.9183007,6.56862745 12.2875817,6.56862745 L10.6535948,6.56862745 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"/>
+                                            <path d="M17.1895425,3.62745098 L15.5555556,3.62745098 C14.9248366,3.62745098 14.4117647,4.15655637 14.4117647,4.80698529 L14.4117647,13.2322304 C14.4117647,13.8826593 14.9248366,14.4117647 15.5555556,14.4117647 L17.1895425,14.4117647 C17.8202614,14.4117647 18.3333333,13.8826593 18.3333333,13.2322304 L18.3333333,4.80698529 C18.3333333,4.15655637 17.8202614,3.62745098 17.1895425,3.62745098 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                          </ion-avatar>
+                          <ion-label>
+                            <h2>My Dashboard</h2>
+                          </ion-label>
+                        </ion-item>
+                        </ion-item> -->
+    <!-- <ion-item class="profile-item" lines="none" (click)="activateyourBusiness()">
+                            <ion-item lines="none" no-padding>
+                                <ion-avatar slot="start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 35 35" version="1.1">
+                                      <g id="activate-your-business" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                          <g id="Group-5" transform="translate(2.000000, 2.000000)">
+                                              <g id="Group-Copy-4" fill="#4DCA69">
+                                                  <rect id="Rectangle" x="0" y="0" width="32" height="32" rx="16"/>
+                                              </g>
+                                              <g id="light-bulb-(1)" transform="translate(8.000000, 6.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                                  <path d="M13,7.5 C13,10 10.5,12.4609375 10.5,15 L5.5,15 C5.5,12.5390625 3,10 3,7.5 C3,4.73875 5.23878906,2.5 8,2.5 C10.76125,2.5 13,4.73878906 13,7.5 Z M9.875,17.5 L6.125,17.5 C5.77953125,17.5 5.5,17.7795313 5.5,18.125 C5.5,18.4704687 5.77953125,18.75 6.125,18.75 L6.23976562,18.75 C6.49734375,19.4775391 7.18460937,20 8.00003906,20 C8.81546875,20 9.50277344,19.4775391 9.7603125,18.75 L9.875,18.75 C10.2204687,18.75 10.5,18.4704687 10.5,18.125 C10.5,17.7795313 10.2204687,17.5 9.875,17.5 Z M9.875,15.625 L6.125,15.625 C5.77953125,15.625 5.5,15.9045312 5.5,16.25 C5.5,16.5954687 5.77953125,16.875 6.125,16.875 L9.875,16.875 C10.2204687,16.875 10.5,16.5954687 10.5,16.25 C10.5,15.9045312 10.2204687,15.625 9.875,15.625 Z M1.19214844,4.29199219 L2.31398437,4.93898438 C2.48734375,4.55566406 2.69851562,4.19679688 2.94265625,3.85867188 L1.81714844,3.20800781 L1.19214844,4.29199219 Z M8.625,1.31347656 L8.625,0 L7.375,0 L7.375,1.31347656 C7.58375,1.29152344 7.78515625,1.25 8,1.25 C8.21484375,1.25 8.41625,1.29152344 8.625,1.31347656 Z M5.43898437,1.81398438 L4.79199219,0.692148438 L3.70800781,1.31714844 L4.35863281,2.44265625 C4.69679687,2.19847656 5.05566406,1.98730469 5.43898437,1.81398438 Z M14.8078516,4.29199219 L14.1828516,3.20800781 L13.0573437,3.85863281 C13.3014844,4.19675781 13.5139062,4.55566406 13.6872266,4.93894531 L14.8078516,4.29199219 Z M12.2907812,1.31714844 L11.2092187,0.692148438 L10.5622266,1.81398438 C10.9442969,1.98734375 11.3044141,2.19851563 11.6413281,2.44144531 L12.2907812,1.31714844 Z M1.75,7.5 C1.75,7.28515625 1.79152344,7.08375 1.81347656,6.875 L0.5,6.875 L0.5,8.125 L1.8159375,8.125 C1.79152344,7.9175 1.75,7.71242188 1.75,7.5 Z M14.1865234,6.875 C14.2084766,7.08375 14.25,7.28515625 14.25,7.5 C14.25,7.71242188 14.2085156,7.9175 14.1840625,8.125 L15.5,8.125 L15.5,6.875 L14.1865234,6.875 Z M13.1599219,11.1999609 L14.1828906,11.7907813 L14.8078906,10.7080078 L13.6726172,10.0537109 C13.5151562,10.441875 13.3442187,10.8227344 13.1599219,11.1999609 Z M1.19214844,10.7080078 L1.81714844,11.7907813 L2.8315625,11.2060547 C2.6484375,10.8276172 2.47753906,10.4443359 2.32253906,10.0561328 L1.19214844,10.7080078 Z" id="Shape"/>
+                                              </g>
+                                          </g>
+                                      </g>
+                                  </svg>
+                                </ion-avatar>
+                                <ion-label>
+                                  <h2>Activate your Business</h2>
+                                </ion-label>
+                              </ion-item>
+                              </ion-item> -->
+    <ion-item class="profile-item" lines="none" (click)="mysetting()">
+      <ion-item lines="none" no-padding>
+        <ion-avatar slot="start">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px"
+            viewBox="0 0 32 32" version="1.1">
+            <g id="cp-account-settings" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Group-20">
+                <circle id="Oval" fill="#DA79D7" cx="16" cy="16" r="16" />
+                <g id="Group-36" transform="translate(9.000000, 8.000000)" stroke="#FFFFFF" stroke-width="2">
+                  <rect id="Rectangle-10" x="0" y="0" width="13" height="16" rx="2" />
+                  <path d="M3.5,4 L4,4" id="Line-4" stroke-linecap="square" />
+                  <path d="M3.5,8 L7.5,8" id="Line-4-Copy" stroke-linecap="square" />
+                  <path d="M3.5,12 L7.5,12" id="Line-4-Copy-2" stroke-linecap="square" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </ion-avatar>
+        <ion-label>
+          <h2>Settings</h2>
+        </ion-label>
+      </ion-item>
+    </ion-item>
+    <ion-item class="profile-item" lines="none" (click)="bankaccount()">
+      <ion-item lines="none" no-padding>
+        <ion-avatar slot="start">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px"
+            viewBox="0 0 35 35" version="1.1">
+            <g id="add-bank-details" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Group-Copy-8" transform="translate(1.000000, 2.000000)" fill="#DA79D7">
+                <rect id="Rectangle" x="0" y="0" width="32" height="32" rx="16" />
+              </g>
+              <g id="bank-building-(1)" transform="translate(8.000000, 9.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path
+                  d="M16.4082883,16.4545455 L0.953775713,16.4545455 C0.526785504,16.4545455 0.180851064,16.8003916 0.180851064,17.2276345 C0.180851064,17.6541539 0.526785504,18 0.953775713,18 L16.4079264,18 C16.8349166,18 17.1808511,17.6541539 17.1808511,17.2276345 C17.1804892,16.8003916 16.8345548,16.4545455 16.4082883,16.4545455 Z"
+                  id="Path" />
+                <path
+                  d="M1.7066729,14.1357003 C1.29063751,14.1357003 0.953578337,14.4816139 0.953578337,14.9085783 C0.953578337,15.3355428 1.29063751,15.6818182 1.7066729,15.6818182 L14.882302,15.6818182 C15.2983373,15.6818182 15.6353965,15.3355428 15.6353965,14.9085783 C15.6353965,14.4816139 15.2983373,14.1357003 14.882302,14.1357003 L14.6943809,14.1357003 L14.6943809,7.18124528 L14.882302,7.18124528 C15.0906722,7.18124528 15.2584967,7.00828849 15.2584967,6.79516809 C15.2584967,6.5820477 15.0899671,6.40909091 14.882302,6.40909091 L1.7066729,6.40909091 C1.4986552,6.40909091 1.33047819,6.5820477 1.33047819,6.79516809 C1.33047819,7.00828849 1.49900778,7.18124528 1.7066729,7.18124528 L1.89494654,7.18124528 L1.89494654,14.1353384 L1.7066729,14.1353384 L1.7066729,14.1357003 Z M13.1881918,7.18124528 L13.1881918,14.1353384 L10.9296132,14.1353384 L10.9296132,7.18124528 L13.1881918,7.18124528 Z M9.42342412,7.18124528 L9.42342412,14.1353384 L7.16484559,14.1353384 L7.16484559,7.18124528 L9.42342412,7.18124528 Z M3.40043051,7.18124528 L5.65900904,7.18124528 L5.65900904,14.1353384 L3.40043051,14.1353384 L3.40043051,7.18124528 Z"
+                  id="Shape" />
+                <path
+                  d="M0.953444376,5.63636364 L16.4006768,5.63636364 C16.4032087,5.63636364 16.4061023,5.63636364 16.4082724,5.63636364 C16.8354332,5.63636364 17.1808511,5.29197083 17.1808511,4.86688347 C17.1808511,4.52897504 16.9623878,4.24258144 16.6589264,4.1388313 L8.99462805,0.703909297 C8.79316442,0.613848416 8.56276527,0.613848416 8.36093995,0.703909297 L0.636600327,4.16548933 C0.304203431,4.31463014 0.121547901,4.67415318 0.198227054,5.02863281 C0.274544513,5.38311244 0.589218398,5.63636364 0.953444376,5.63636364 Z"
+                  id="Path" />
+              </g>
+            </g>
+          </svg>
+        </ion-avatar>
+        <ion-label>
+          <h2>Bank Account Details</h2>
+        </ion-label>
+      </ion-item>
+    </ion-item>
+  </ion-card>
+</ion-content>

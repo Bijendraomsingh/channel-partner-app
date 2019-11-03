@@ -1,0 +1,112 @@
+.profilecontact {
+  height: 116px;
+  margin-top: 20px;
+  background-image: linear-gradient(107deg, #3023ae, #c86dd7);
+  box-shadow: none;
+  border-radius: 10px;
+}
+.call-now-c {
+  @extend .profilecontact;
+  background-image: linear-gradient(107deg, #47ad9d, #47ad9d);
+}
+.icon-bg {
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+  }
+}
+.talk-tous {
+  flex-grow: 2;
+  p {
+    color: #fff;
+    font: 14px;
+  }
+}
+.call-height-bg {
+  height: 112px;
+  align-items: center;
+  display: flex;
+  p {
+    color: #fff;
+  }
+}
+.videocall {
+  height: 32px;
+  border-radius: 5px;
+  background: #fff;
+  --box-shadow: none;
+  color: #f48780;
+  font-size: 15px;
+  --background: none;
+  text-transform: capitalize;
+}
+.call-now-c {
+  margin-top: 0;
+}
+.call-now-view {
+  @extend .videocall;
+  background: #f5a623;
+  color: #fff;
+}
+.contact-detail {
+  border-radius: 10px;
+  box-shadow: none;
+  ion-list {
+    padding: 10px 20px;
+    ion-item {
+      --padding-end: 0px;
+      --inner-padding-end: 0px;
+      ion-label {
+        line-height: 19px;
+        font-size: 16px;
+        font-weight: normal;
+        color: #77869e;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.registerbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .register-btn {
+    font-size: 16px;
+    text-transform: capitalize;
+    width: 200px;
+    background-image: linear-gradient(#7d59e3, #472dc2);
+    border-radius: 40px;
+    height: 51px;
+    --box-shadow: none;
+    --background: none;
+  }
+  .contact-us {
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+}
+.contact_us_shortly .contact_us_shortly_inner {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 0 10px 0 #e5e5e5;
+  padding: 16px;
+  margin: 0px;
+}
+.contact_us_shortly .contact_us_shortly_inner p.contact_us_relex {
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "avenir-roman";
+  padding-top: 72px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.contact_us_shortly .contact_us_shortly_inner img {
+  margin: 0px auto;
+  padding: 54px 0px 54px 0px;
+}

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary" style="line-height: 0px;">
+    <ion-title>
+      <img src="../../assets/images/logo.svg">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="phonenumber" class="bggray">
+  <ion-card-header color="phonenumber" class="phonenumber">
+    <ion-card-title class="welcome-text">Welcome</ion-card-title>
+    <ion-card-subtitle class="verify-phone">Verify your phone</ion-card-subtitle>
+    <ion-card-subtitle class="bg-height" style="background:#472dc2"></ion-card-subtitle>
+  </ion-card-header>
+</ion-content>
+<ion-content color="phonenumber" class="bggray">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col size="8">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <ion-label class="phone-no">Phone Number</ion-label>
+          <ion-item color="phonenumber" class="inputbox-border ion-no-margin ion-no-padding" lines="none"
+            style="margin-bottom:30px; border-bottom:2px solid #02f4ce;    height: 40px;">
+            <ion-label style="color:#9b9b9b !important;color: #9b9b9b !important;
+                  border-right: 1px  solid #a9a6a6;
+                  padding-right: 8px;">+91</ion-label>
+            <ion-input type="tel" placeholder="000000000" formControlName="mobile" (keypress)="inputMobileno($event)"
+              minlength="10" maxlength="10" style="color:#848181 !important;"></ion-input>
+              
+            
+          </ion-item>
+          <div *ngIf="mobile.errors?.minlength" class="mob-no">
+              Mobile number should be 10 digits
+        </div> 
+          <ion-content color="phonenumber" class="registerbutton" style="position:absolute;">
+            <ion-button shape="round" size="large" class="register-btn" [disabled]="!contactForm.valid"
+              (click)="registerLoginbtn()">Submit</ion-button>
+          </ion-content>
+        </form>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-content *ngIf="showOtp" class="enterotpcode">
+  <h3>Enter the code that was send to </h3>
+  <h4>+91{{registerData.phone}}</h4>
+  <h6 style="color:red">{{otp}}</h6>
+  <h1>{{otpnotFdata}}</h1>
+  <form [formGroup]="otpaddForm" (ngSubmit)="onSubmit()">
+    <div class="code-enter-box">
+      <ion-input type="tel" name="otp1" formControlName="otp1" class="otp-box" maxlength="1" tabindex="1"
+        (keyup)="moveFocus(a)" no-padding></ion-input>
+      <ion-input type="tel" name="otp2" formControlName="otp2" class="otp-box" maxlength="1" tabindex="2" #a
+        (keyup)="moveFocus(b)" no-padding></ion-input>
+      <ion-input type="tel" name="otp3" formControlName="otp3" class="otp-box" maxlength="1" tabindex="3" #b
+        (keyup)="moveFocus(c)" no-padding></ion-input>
+      <ion-input type="tel" name="otp4" formControlName="otp4" class="otp-box" maxlength="1" tabindex="4" #c
+        (keyup)="moveFocus(d)" no-padding></ion-input>
+      <ion-input type="tel" name="otp5" formControlName="otp5" class="otp-box" maxlength="1" tabindex="5" #d
+        (keyup)="moveFocus(e)" no-padding></ion-input>
+      <ion-input type="tel" name="otp6" formControlName="otp6" class="otp-box" maxlength="1" tabindex="6" #e no-padding>
+      </ion-input>
+    </div>
+    <ion-button [disabled]="!otpaddForm.valid" (click)="verifyotp()">Continue</ion-button>
+  </form>
+  <h6 (click)="otpnotfound()">I didn't get a code</h6>
+</ion-content>
+<!--<ion-content *ngIf="registerLoginError" class="enterotpcode">
+      {{registerLoginError}}
+  </ion-content> -->

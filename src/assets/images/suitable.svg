@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>suitable for</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="26.258569%" y1="5.64376181%" x2="50%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#0088C2" offset="0%"></stop>
+            <stop stop-color="#3AA1FB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="suitable-for" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-25" transform="translate(1.000000, 1.000000)">
+            <g id="Group-7" fill="url(#linearGradient-1)">
+                <rect id="Rectangle" x="0" y="0" width="33" height="33" rx="15"></rect>
+            </g>
+            <g id="tick-(2)" transform="translate(10.000000, 13.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M12.8096182,0.179483642 C12.5557884,-0.0598278806 12.1442576,-0.0598278806 11.8903771,0.179483642 L4.10298034,7.52080382 L1.10963243,4.69894805 C0.855802666,4.45963652 0.444271919,4.45966046 0.190391369,4.69894805 C-0.0634637897,4.93823563 -0.0634637897,5.32618934 0.190391369,5.56550086 L3.64335981,8.82059714 C3.89711341,9.05988472 4.30894884,9.05971717 4.56260088,8.82059714 L12.8096182,1.04606039 C13.0634733,0.806772807 13.0634479,0.418795164 12.8096182,0.179483642 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,48 @@
+.activate_your_buisiness {
+  --background: #fff;
+}
+.activate_your_buisiness .business_social_earn {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 #e5e5e5;
+  padding: 20px;
+  margin: 20px;
+}
+
+.activate_your_buisiness .business_social_earn p {
+  font-family: avenir-roman;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  text-align: center;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin: 16px 0px 16px 0px;
+}
+.activate_your_buisiness .business_social_earn img {
+  margin: 0px auto;
+  display: block;
+}
+.activate_your_buisiness .business_social_earn .selling_social_panters {
+  --border-radius: 26px;
+  --background: #11c770;
+  width: 100%;
+  min-height: 52px;
+  --ion-color-base: var(--ion-color-light, #11c770) !important;
+  --ion-color-base-rgb: var(--ion-color-light-rgb, #11c770) !important;
+  --ion-color-contrast: var(--ion-color-light-contrast, #fff) !important;
+  --ion-color-contrast-rgb: var(
+    --ion-color-light-contrast-rgb,
+    #fff
+  ) !important;
+  --ion-color-shade: var(--ion-color-light-shade, #11c770) !important;
+  --ion-color-tint: var(--ion-color-light-tint, #11c770) !important;
+  --box-shadow: none;
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  font-family: avenir-roman;
+}

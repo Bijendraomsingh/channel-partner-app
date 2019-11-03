@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1">
+          <ion-button (click)="searchbackDismiss()" class="searchback">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="10">
+          <ion-searchbar class="" placeholder="Search for softwares here" (ionInput)="getItems($event)"
+            [debounce]="500"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background:#ededed;">
+  <ion-list class="ion-no-padding ion-no-margin" *ngIf="productList != ''">
+    <ion-item *ngFor="let item of productList" class="selling-list"
+      (click)="selectedSearch(item.product_name, item.product_id, 'product')">
+      <h1>{{ item.product_name }}</h1>
+    </ion-item>
+  </ion-list>
+  <ion-card no-padding no-margin class="categories-box">
+    <h3>Top Selling Categories</h3>
+    <div *ngIf="posts; else loading" style="width:100%;" class="ion-no-margin ion-no-padding">
+      <span *ngFor="let post of posts" (click)="selectedSearch(post.name, post.slug, 'category')">{{ post.name }}</span>
+    </div>
+    <ng-template #loading>
+      <ion-spinner name="crescent" style="--color:#3880ff;
+        margin: 50px 0;
+        height: 50px;
+        width: 100%;" class="spinner-data"></ion-spinner>
+    </ng-template>
+  </ion-card>
+  <ion-card class="browse-by-Dep ion-no-margin ion-no-padding">
+    <ion-item no-lines lines="none">
+      <ion-text class="browse">Browse by Department</ion-text>
+      <ion-text slot="end" class="view-all">View All
+        <p class="viewall">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+          </svg></p>
+      </ion-text>
+    </ion-item>
+    <ion-item no-lines lines="none">
+      <ion-slides [options]="sliderOptssearchDep" *ngIf="getDepartmentsname; else loading" loop="true"
+        class="browse-by">
+        <ion-slide class="badge-postion" *ngFor="let getdpart of getDepartmentsname"
+          (click)="selectedSearch(getdpart.name, getdpart.slug, 'business_function')">
+          <p class="profile-img">
+            <img src="https://nweb.techjockey.com/assets/images/techjockey/business_function/{{
+                getdpart.image
+              }}" onError="this.src='../../assets/images/badu-live.png'" />
+          </p>
+          <p class="overlaybg"></p>
+          <p class="profile-text">{{ getdpart.name }}</p>
+        </ion-slide>
+      </ion-slides>
+      <ng-template #loading>
+        <ion-spinner name="crescent" style="--color:#3880ff;
+              margin: 50px 0;
+              height: 50px;
+              width: 100%;" class="spinner-data"></ion-spinner>
+      </ng-template>
+    </ion-item>
+  </ion-card>
+  <ion-card class="browse-by-indus ion-no-margin ion-no-padding">
+    <ion-item no-lines lines="none">
+      <ion-text class="browse">Browse by Industries</ion-text>
+      <ion-text slot="end" class="view-all">View All
+        <p class="viewall">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+          </svg></p>
+      </ion-text>
+    </ion-item>
+    <ion-item no-lines lines="none">
+      <ion-slides [options]="sliderOptssearchDep" loop="true" *ngIf="getIndustriesname; else loading" class="browse-by">
+        <ion-slide class="badge-postion" *ngFor="let industries of getIndustriesname"
+          (click)="selectedSearch(indusries.name, industries.slug, 'industry')">
+          <p class="profile-img">
+            <img src="https://nweb.techjockey.com/assets/images/techjockey/industry/{{
+                industries.image
+              }}" onError="this.src='../../assets/images/badu-live.png'" />
+          </p>
+          <p class="overlaybg"></p>
+          <p class="profile-text">{{ industries.name }}</p>
+        </ion-slide>
+        <ng-template #loading>
+          <ion-spinner name="crescent" style="--color:#3880ff;--color:#3880ff;
+                margin: 50px 0;
+                height: 50px;
+                width: 100%;" class="spinner-data"></ion-spinner>
+        </ng-template>
+      </ion-slides>
+    </ion-item>
+  </ion-card>
+  <!--
+
+  <ion-card no-padding no-margin class="categories-box">
+    <h3>Top Selling Categories</h3>
+    <div *ngFor="let searchCatgorie of searchCatgories">
+      <ion-text>{{ searchCatgorie.name }}</ion-text>
+    </div>
+  </ion-card>
+</ion-content>
+-->
+  <!--
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2"></ion-col>
+          <ion-col size="8">
+            <ion-searchbar (ionInput)="filterproductitem($event)">
+            </ion-searchbar>
+          </ion-col>
+          <ion-col size="2"></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="ion-padding">
+      <ion-list>
+        <ion-item
+          (click)="selectVal(item.name)"
+          *ngFor="let item of searchCatgories"
+        >
+          {{ item.name }}
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+  -->
+</ion-content>

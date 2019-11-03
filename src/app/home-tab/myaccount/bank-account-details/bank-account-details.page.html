@@ -1,0 +1,108 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="heading-padd">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="heading-size">Bank Account Details </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  class="accounts_card_num"
+  style="background: #f0f1f2;"
+  color="primery"
+> <form [formGroup]="bankuserfrom">
+  <ion-card class="callus-btn paddlr">
+    <img src="../../assets/images/call-us.png" style="height: 178px;" />
+    <ion-card-content
+      class="acount-name  acount-name-b"
+      color="phonenumber"
+      style="background-color: rgba(45, 15, 183, 0.77)"
+    >
+      <ion-text class="account-no"
+        >Account Number
+        <h2>343434343434</h2></ion-text
+      >
+      <ion-text class="edit">Edit</ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid class="accounts_card_num_inner">
+    <ion-row>
+     
+        <ion-col class="accounts_card_serail">
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">Bank Name </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p><span><ion-input formControlName="bank_name"></ion-input>
+               </span></p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">
+                  Account Number
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p><span> <ion-input formControlName="acc_num"></ion-input> </span></p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">
+                  IFC-Code
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+                <p><span> <ion-input formControlName="ifsc_code" ></ion-input> </span></p>
+              </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">
+                  Card Holder Name
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p><span><ion-input formControlName="acc_holder_name"></ion-input></span></p>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="12" class="name_mahindrea">
+              <ion-button>save</ion-button>
+             </ion-col>
+          </ion-row>
+        </ion-col>
+
+        
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>

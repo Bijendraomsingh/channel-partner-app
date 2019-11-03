@@ -1,0 +1,557 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="heading-padd">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="heading-size">{{title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="product_detail" style="--background:#ededed">
+   <ion-card class="product_detail-slide ion-no-padding ion-no-margin" style="border-radius: 0 0 20px 20px;margin-bottom:16px;">
+      <ion-slides  pager="true" [options]="slideOptsDetail">
+          <ion-slide style="height: 237px;" *ngFor="let screenshot of screenshots">
+            <ion-card class="slide-caintner">
+              <ion-card-content>
+                  <p class="screenshotimg">
+                      <img src="{{screenshotsBg}}{{screenshot.image}}" onError="this.src='../../../assets/images/no-image-available.jpg'"/> 
+                  </p>
+        
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+        <ng-template #loading>
+            <ion-spinner name="crescent" style="--color:#3880ff;
+              margin: 50px 0;
+              height: 50px;
+              width: 100%;" class="spinner-data"></ion-spinner>
+          </ng-template>
+   </ion-card>
+    <ion-card class="top_categorey ion-no-padding ion-no-margin" style="background: #ededed;    box-shadow: none;" color="primery">
+       <ion-grid class="microsoft_office ion-no-padding ion-no-margin" 
+      >
+            <ion-row class="business_software_cont">
+                <ion-col size="12">
+                    <span class="inner_office"> {{productAlldata.product_name}}</span>
+                    <p class="solid_dd"> {{productAlldata.brand_name}} </p>
+                    <p class="card_review">
+                     <ion-icon name="star" class="is" *ngIf="productAlldata.total_reviews > 0"></ion-icon>
+                     <ion-icon name="star" class="is" *ngIf="productAlldata.total_reviews > 1"></ion-icon>
+                     <ion-icon name="star" class="is" *ngIf="productAlldata.total_reviews > 2"></ion-icon>
+                     <ion-icon name="star" class="is" *ngIf="productAlldata.total_reviews > 3"></ion-icon>
+                     <ion-icon name="star" class="is" *ngIf="productAlldata.total_reviews > 4"></ion-icon>
+                     <ion-icon name="star" class="is" *ngIf="productAlldata.total_reviews > 5"></ion-icon> 
+                     <ion-icon name="star" class="is" *ngIf="productAlldata.total_reviews > 6"></ion-icon>  
+                     <span>(224 reviews)</span>   
+                    </p>
+                   
+                    <p class="price_stating_flow"> Starting Price:</p>
+                     <div class="km_rs"> 
+                    <div no-lines lines="none" style="height:40px;" *ngIf="productAlldata.price_on_request == 1 else priceonrequest">
+                                    <ion-text class="priceonrequest">Price on request</ion-text>
+                   </div>
+                   <ng-template #priceonrequest>
+                        <ion-text  *ngIf="productAlldata.special_price == 0 else price" lines="none" class="ion-no-margin ion-no-padding" >
+                          <ion-text class="bold-price">&#2352;{{productAlldata.special_price}}<b>{{productAlldata.price_text}}</b></ion-text>
+                          <ion-text class="offer-price">&#2352;{{productAlldata.price}}<b>{{productAlldata.price_text}}</b></ion-text>
+                          <ion-button class="offer-btn button-shadow-none" color="" style="background:#0ed93a;">{{productAlldata.discount}}% OFF</ion-button>
+                        </ion-text>
+                        <ng-template #price>
+                          <ion-text class="bold-price">&#2352;{{productAlldata.price}}<b>{{productAlldata.price_text}}</b></ion-text>     
+                        </ng-template>
+                    </ng-template>
+
+                </div> 
+                    
+                    <!-- <ng-template #priceonrequest>
+                        <ion-text  *ngIf="productAlldata.special_price != 0 else price" lines="none" class="ion-no-margin ion-no-padding" >
+                          <ion-text class="bold-price">&#2352;{{productAlldata.special_price}}<b>{{productAlldata.price_text}}</b></ion-text>
+                          <ion-text class="offer-price">&#2352;{{productAlldata.price}}<b>{{productAlldata.price_text}}</b></ion-text>
+                          <ion-button class="offer-btn button-shadow-none" color="" style="background:#0ed93a;">{{productAlldata.discount}}% OFF</ion-button>
+                        </ion-text>
+                        <ng-template #price>
+                          <ion-text class="bold-price">&#2352;{{productAlldata.price}}<b>{{productAlldata.price_text}}</b></ion-text>     
+                        </ng-template>
+                    </ng-template>  -->
+                </ion-col>
+
+                <ion-col size="12" class="features_div">
+                    <h4> Features </h4>
+                    <div *ngFor="let planorder of plans">
+                        {{planorder.plan.id}}
+                    </div>
+                    <ion-row>
+                        <ion-col size="6" class="display_cdd">
+
+                            <p class="features_parh">   Endpoint Protection </p>
+                            <p class="features_parh">    Data Recovery </p>
+                            <p class="features_parh">   Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh"> Data Recovery </p>
+
+                        </ion-col>
+
+                        <ion-col size="6" class="display_cdd">
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh"> Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh"> Endpoint Protection </p>
+                            <p class="features_parh"> Data Recovery </p>
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                            <p class="features_parh">  Endpoint Protection </p>
+                            <p class="features_parh">  Data Recovery </p>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row class="business_software_cont">
+                <ion-col size="12">
+                    <h4 class="abouts_us"> About Us </h4>
+                    <p class="completes"> {{productAlldata.brand_description}}
+                    </p>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="tally_software_cont">
+                <ion-col size="12">
+                    <h2> Tally.ERP 9 Pricing </h2>
+                    <p> (14 plans available) </p>
+                </ion-col>
+                <ion-col size="12" class="plans">
+                        
+                        <ion-slides pager="true"  paginationClickable="true" [options]="slideOptProduct" style="height: 600px;">
+                              
+                            <ion-slide>
+                                   1 
+                                </ion-slide>
+                                <ion-slide>
+                                    2
+                                </ion-slide>
+                                <ion-slide >
+                                     3
+                                </ion-slide>
+                                <ion-slide >
+                                     4
+                                </ion-slide>
+                        </ion-slides>
+                </ion-col>
+
+                <ion-col class="tally_cart">
+                    <ion-grid class="lepetro_best">
+                        <ion-row>
+                            <ion-col size="12" class="background_tally_card">
+                                Silver
+                            </ion-col>
+
+                            <ion-col class="features_silver_part" size="12">
+                                <h3> Features </h3>
+                                <p>
+                                    <ion-icon name="checkmark"></ion-icon> <span> Customer Portal </span> </p>
+                                <p>
+                                    <ion-icon name="checkmark"></ion-icon> <span> Account management </span> </p>
+                                <p>
+                                    <ion-icon name="checkmark"></ion-icon> <span> Multi Location  </span> </p>
+                                <p>
+                                    <ion-icon name="checkmark"></ion-icon><span> Customer Portal </span> </p>
+                                <p>
+                                    <ion-icon name="checkmark"></ion-icon><span> Account management</span> </p>
+                                <span class="view_plan_more"> View all 15 Features </span>
+
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+
+                    <ion-grid>
+                        <ion-row class="plan_price_part_de">
+
+                            <ion-col size="5">
+                                <h5 class="plan_price_quanity"> Plan Price </h5>
+                                <p> Quantity (License)</p>
+
+                            </ion-col>
+                            <ion-col size="2">
+
+                            </ion-col>
+                            <ion-col size="5">
+                                <ion-item>
+
+                                    <ion-button color="light" class="minus_left_css">
+                                        <ion-icon name="add" class="add"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-input class="princing_input_div">1</ion-input>
+                                    <ion-button color="light" class="plus_priceing">
+                                        <ion-icon name="remove"></ion-icon>
+                                    </ion-button>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-button>1</ion-button>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+
+                    </ion-grid>
+
+                    <ion-grid class="calculated_price_success">
+                        <ion-row>
+                            <p class="pp"> Calculated Price </p>
+                            <h4>&#x20B9; 22000</h4>
+                            <button  class="button_sucess_dd">Share This Plan</button>
+                        </ion-row>
+
+                    </ion-grid>
+
+                </ion-col>
+
+            </ion-row>
+
+            <ion-row class="specifications_software_cont">
+                <ion-col size="12">
+                    <h4> Specifications </h4>
+
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/artboard.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> Organization Type </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> SME </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Mid Market </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Enterprise </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Startup </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/employees.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> No. of Employees </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> SME </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Mid Market </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Enterprise </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Startup </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/supported_platform.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> Supported Platforms </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> SME </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Mid Market </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Enterprise </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Startup </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+
+                </ion-col>
+
+            </ion-row>
+
+            <ion-row class="specifications_software_cont">
+                <ion-col size="12">
+                    <h4> Specifications </h4>
+
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/artboard.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> Organization Type </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> SME </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Mid Market </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Enterprise </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Startup </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/employees.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> No. of Employees </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> SME </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Mid Market </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Enterprise </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Startup </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/supported_platform.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> Supported Platforms </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> SME </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Mid Market </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Enterprise </p>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <p class="sme"> Startup </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/device.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> Device </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> Desktop </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/suitable.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> Suitable for </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> All Industries </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+                    <ion-row class="type_wise">
+                        <ion-col size="1">
+                            <span> <img src="img/language.svg"/> </span>
+
+                        </ion-col>
+                        <ion-col size="11" class="organstion_cont_right">
+                            <p class="organstion_cont"> Language </p>
+                            <ion-row>
+                                <ion-col size="3">
+                                    <p class="sme"> English </p>
+                                </ion-col>
+
+                            </ion-row>
+
+                        </ion-col>
+
+                    </ion-row>
+
+                </ion-col>
+
+            </ion-row>
+
+            <ion-row class="recently_software_cont">
+                <ion-col size="12">
+                    <h4> Recently shared by </h4>
+                    <ion-list class="shared_bottom_margin">
+                        <ion-item class="shared_location_div" lines="none">
+                            <ion-avatar slot="start" class="ios hydrated">
+                                <img src="img/modi_pic.jpg">
+                            </ion-avatar>
+                            <ion-label class="ben_along_items">
+                                <h2>Poonam Kumar </h2>
+                                <h3>Shared on Whatsapp</h3>
+
+                            </ion-label>
+                            <ion-label class="looking_arean">
+                                <h2>06:34AM</h2>
+
+                            </ion-label>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-list class="shared_bottom_margin">
+                        <ion-item class="shared_location_div" lines="none">
+                            <ion-avatar slot="start" class="ios hydrated">
+                                <img src="img/modi_pic.jpg">
+                            </ion-avatar>
+                            <ion-label class="ben_along_items">
+                                <h2>Poonam Kumar </h2>
+                                <h3>Shared on Whatsapp</h3>
+
+                            </ion-label>
+                            <ion-label class="looking_arean">
+                                <h2>06:34AM</h2>
+
+                            </ion-label>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-list class="shared_bottom_margin">
+                        <ion-item class="shared_location_div" lines="none">
+                            <ion-avatar slot="start" class="ios hydrated">
+                                <img src="img/modi_pic.jpg">
+                            </ion-avatar>
+                            <ion-label class="ben_along_items">
+                                <h2>Poonam Kumar </h2>
+                                <h3>Shared on Whatsapp</h3>
+
+                            </ion-label>
+                            <ion-label class="looking_arean">
+                                <h2>06:34AM</h2>
+
+                            </ion-label>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-list class="shared_bottom_margin">
+                        <ion-item class="shared_location_div" lines="none">
+                            <ion-avatar slot="start" class="ios hydrated">
+                                <img src="img/modi_pic.jpg">
+                            </ion-avatar>
+                            <ion-label class="ben_along_items">
+                                <h2>Poonam Kumar </h2>
+                                <h3>Shared on Whatsapp</h3>
+
+                            </ion-label>
+                            <ion-label class="looking_arean">
+                                <h2>06:34AM</h2>
+
+                            </ion-label>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-list class="shared_bottom_margin">
+                        <ion-item class="shared_location_div" lines="none">
+                            <ion-avatar slot="start" class="ios hydrated">
+                                <img src="img/modi_pic.jpg">
+                            </ion-avatar>
+                            <ion-label class="ben_along_items">
+                                <h2>Poonam Kumar </h2>
+                                <h3>Shared on Whatsapp</h3>
+
+                            </ion-label>
+                            <ion-label class="looking_arean">
+                                <h2>06:34AM</h2>
+
+                            </ion-label>
+                        </ion-item>
+                    </ion-list>
+
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+    </ion-card>
+</ion-content>

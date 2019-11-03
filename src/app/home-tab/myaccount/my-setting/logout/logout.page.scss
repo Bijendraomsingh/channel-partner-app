@@ -1,0 +1,59 @@
+.setting_logout_div .setting_logout_div_inner {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 0 10px 0 #e5e5e5;
+  padding: 16px;
+  margin: 0px;
+}
+.setting_logout_div .setting_logout_div_inner p.contact_us_relex {
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "avenir-roman";
+  padding-top: 6px;
+  color: #161f3d;
+}
+.setting_logout_div .setting_logout_div_inner img {
+  margin: 0px auto;
+  padding-top: 54px;
+  padding-bottom: 6px;
+}
+.setting_logout_div .setting_logout_div_inner .true_button {
+  --background: none;
+  --box-shadow: none;
+  width: 100%;
+  border-radius: 20px;
+  border: solid 1px #9b9b9b;
+  --ion-color-base: var(--ion-color-success, #e5e5e5) !important;
+  --ion-color-base-rgb: var(--ion-color-success-rgb, #e5e5e5) !important;
+  --ion-color-contrast: var(--ion-color-success-contrast, #333) !important;
+  --ion-color-contrast-rgb: var(
+    --ion-color-success-contrast-rgb,
+    #e5e5e5
+  ) !important;
+  --ion-color-shade: var(--ion-color-success-shade, #e5e5e5) !important;
+  --ion-color-tint: var(--ion-color-success-tint, #e5e5e5) !important;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "avenir-roman";
+  color: #24272c;
+  text-transform: capitalize;
+  margin-bottom: 36px;
+  margin-top: 36px;
+  opacity: 0.7;
+}
+.setting_logout_div .setting_logout_div_inner .true_button2 {
+  --box-shadow: none;
+  width: 100%;
+  --border-radius: 20px;
+  margin-bottom: 36px;
+
+  margin-top: 36px;
+}
+.setting_logout_div .setting_logout_div_inner svg {
+  margin: 0px auto;
+  margin-top: 26px;
+}

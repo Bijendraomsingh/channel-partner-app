@@ -1,0 +1,33 @@
+.abouttechjockey {
+  .privacy_policy_main {
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 #e5e5e5;
+    background: #e5e5e5 !important;
+  }
+  .privacy_policy_main h4 {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: justify;
+    color: #4a4a4a;
+    font-family: avenir-roman;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .privacy_policy_main p {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: justify;
+    color: rgba(36, 39, 44, 0.7);
+    font-family: avenir-roman;
+    line-height: 1.5;
+  }
+  .privacy_policy_main .privacy_policy_inner_bg {
+    padding: 20px 16px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 #e5e5e5;
+    margin: 10px;
+  }
+}

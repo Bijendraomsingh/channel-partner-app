@@ -1,0 +1,45 @@
+.video-bg{ background:url(../../assets/images/videobg1.png) no-repeat 0 0;  
+  
+   height: 100vh;
+   /* width: 100%; */
+   display: flex;
+   /* background-clip: border-box; */
+   flex-grow: 1;
+   /* background: url(images/bg.jpg) no-repeat center center fixed; */
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   padding: 0;
+   margin: 0;
+   .top-content{ position: absolute; width:100%; line-height: 40px; top:40px; padding: 20px; text-align: center; color:#fff; font-size: 30px;}
+   .bottom-content{position: absolute; bottom:60px; padding: 20px; text-align: center; color:#fff;  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      font-size: 16px;
+      line-height: 27px; width:100%;}
+   .skip{
+      position: absolute;
+      bottom: 20px;
+      right: -3px;
+      background-blend-mode: overlay;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3)));
+      background-image: linear-gradient(to bottom, rgba(20, 15, 15, 0.7), rgba(9, 4, 4, 0.7));
+      font-size: 12px;
+      text-transform: lowercase;
+      padding: 0;
+      font-weight: normal;
+      margin: 0;
+      --background: none;
+      
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      font-family: avenir-roman;
+      font-size: 11px;
+      color: #fff;
+   }
+      
+}
+
+   .social-btn{
+          display: flex;
+          padding:10px;
+      .mut-btn, .like-btn{--box-shadow: none;font-size: 25px;  width: 54px;}
+   }
